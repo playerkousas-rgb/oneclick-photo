@@ -1,0 +1,875 @@
+【一鍵換角度 · 109 條效果指令大全】
+用法:上載你嘅相到 Gemini,然後複製對應嘅一段貼上,送出就生成。
+英文部分係畀 AI 睇嘅精確指示,唔需要理解,亦唔好改。
+────────────────────────────────────────
+
+[📐 相機角度・機位] 俯衝動作鏡頭
+【效果:俯衝動作鏡頭 /overheadaction】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Re-shoot from a dramatic high camera angle above the subject, around 60-70 degrees looking down. The person tilts their head up toward the lens and leans slightly forward toward the camera with an engaging expression, floor surface visible below.
+（效果說明:高角度俯拍,人物抬頭望鏡頭、身體前傾,有動感）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 角落視角
+【效果:角落視角 /cornerpov】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Place the camera high in the corner where two walls meet, shooting diagonally down at the person so both wall planes and the corner line are visible, moody architectural feel.
+（效果說明:站在兩面牆的角落,由高處斜角拍攝）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 荷蘭傾斜角
+【效果:荷蘭傾斜角 /dutchangle】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Tilt the camera 20-30 degrees to create a Dutch angle, near close-up from slightly above, the person leans toward the lens with a confident intense look.
+（效果說明:整張相傾斜 20-30 度,近距離、氣勢強）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 單點透視
+【效果:單點透視 /onepointperspective】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+One-point perspective composition: the person walks down the centre of a long symmetrical modern corridor, ceiling and floor lines receding to a single vanishing point directly behind them, warm strip lighting.
+（效果說明:人物走在對稱長走廊中央,線條匯聚於消失點）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 高角度俯拍
+【效果:高角度俯拍 /highangle】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Camera above eye level looking down at the person at about 30-40 degrees, full body in frame, the person looks up into the lens.
+（效果說明:鏡頭高於眼睛向下拍,人物望鏡頭）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 低角度仰拍
+【效果:低角度仰拍 /lowangle】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Camera below waist height looking up, heroic low-angle, the person appears tall and powerful against the sky, slight wide-angle feel.
+（效果說明:鏡頭低於腰部向上拍,人物顯氣勢）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 蟲眼仰視
+【效果:蟲眼仰視 /wormview】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Extreme worm's-eye view: camera placed almost on the ground pointing straight up, exaggerated perspective, the person towers over the lens.
+（效果說明:貼地向上拍,極低角度）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 極低角度全身
+【效果:極低角度全身 /wormseye】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Extreme low ground-level angle, full body, legs appear dramatically enlarged by the perspective, arms crossed, standing tall against a plain background.
+（效果說明:貼地全身,雙腿誇張放大）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 鳥瞰視角
+【效果:鳥瞰視角 /birdsview】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Bird's-eye view from high above, camera looking almost straight down, the ground and surroundings clearly visible around the person.
+（效果說明:高處俯視,可見地面與環境）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 無人機俯視
+【效果:無人機俯視 /droneview】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Aerial drone view from high altitude looking down, wide environmental context, the person small in frame but clearly identifiable.
+（效果說明:無人機高空俯拍,環境一覽無遺）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 平視鏡頭
+【效果:平視鏡頭 /eyelevel】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Straight eye-level camera height, natural neutral perspective, medium shot with the person looking directly at the lens.
+（效果說明:鏡頭與眼睛同高,最自然的視角）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 搖臂高機位
+【效果:搖臂高機位 /crane】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+High crane shot from a distant elevated position, the person is small in a vast empty space, wide framing with lots of negative space.
+（效果說明:由高處吊臂遠攝,人顯得渺小）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 全景全身
+【效果:全景全身 /widefull】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Wide full-body shot from a distance, the person placed small in frame with generous space and environmental context around them.
+（效果說明:遠距離全景,包含大量環境）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 主體偏左
+【效果:主體偏左 /toleft】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Keep the same shot but shift the composition so the person stands in the left third of the frame, with open space on the right.
+（效果說明:人物置於畫面左側,右邊留空間）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 主體偏右上
+【效果:主體偏右上 /topright】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Recompose so the person is placed in the upper-right of the frame with generous empty space in the lower-left.
+（效果說明:人物置於畫面右上,左下方留空間）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 主體偏左下
+【效果:主體偏左下 /bottomleft】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Recompose with the person in the lower-left area of the frame, open sky or architecture filling the upper-right.
+（效果說明:人物置於畫面左下,右上方留空間）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📐 相機角度・機位] 主體偏右下
+【效果:主體偏右下 /bottomright】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Recompose with the person in the lower-right area of the frame, negative space filling the upper-left.
+（效果說明:人物置於畫面右下,左上方留空間）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 移軸微縮
+【效果:移軸微縮 /tiltshift】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Tilt-shift miniature effect: shot from high above, top and bottom of the frame heavily blurred, only a thin horizontal band in focus, the whole scene looks like a tiny scale model.
+（效果說明:上下模糊、中間一條清晰,似模型公仔）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 極端 POV
+【效果:極端 POV /extremepov】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Extreme POV: camera placed right at the person's shoe so their sneaker sole dominates the foreground, very low angle looking up along the body.
+（效果說明:鞋底貼近鏡頭,超低視角）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 魚眼視角
+【效果:魚眼視角 /fisheyepov】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Fisheye lens look, camera above the person looking straight down, the head and shoulders at centre with strong barrel distortion around the edges.
+（效果說明:魚眼鏡頭由上往下拍,人臉置中,圓形變形）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 人像特寫
+【效果:人像特寫 /closeup】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Tight head-and-shoulders close-up, shallow depth of field, the face filling most of the frame with a clean out-of-focus background.
+（效果說明:頭肩特寫,淺景深）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 極特寫眼神
+【效果:極特寫眼神 /extremecloseupeyes】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Extreme macro close-up cropping only the eyes and upper face, hyper-detailed skin texture, dramatic lighting on the eyes.
+（效果說明:只取眼睛與上半臉,細節極致）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 創意角度
+【效果:創意角度 /creativeangle】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Playful creative angle: camera on the ground, one foot extending toward the lens with the sole visible in the foreground, the person leaning over the camera.
+（效果說明:鏡頭貼地仰拍,鞋底向鏡頭）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 巨大化視角
+【效果:巨大化視角 /giantperspective】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Forced giant perspective: the face and hand are very close to the lens while the body recedes far below, making the person look like a giant looking down at the camera.
+（效果說明:頭極近鏡頭、身體縮遠,似巨人）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 半身人像
+【效果:半身人像 /portrait】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Classic portrait framing, chest-up, direct eye contact with the lens, soft flattering light, beautifully blurred background.
+（效果說明:正面半身,眼神接觸,背景虛化）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 電影感 POV
+【效果:電影感 POV /cinematicpov】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Cinematic first-person-style angle: camera low near the person's feet pointing up, wide anamorphic feel, dramatic sky behind.
+（效果說明:鏡頭貼近腳邊向上拍,電影感）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 視角魔法
+【效果:視角魔法 /perspectivehack】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Perspective trick: shoot through the empty frame of a pair of glasses held close to the lens so the person appears small inside the lens frame.
+（效果說明:用眼鏡/物件框住人,玩味十足）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 墮天視角
+【效果:墮天視角 /skyfall】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Vertical top-down shot from far above as if falling toward the person, the person looks up at the camera, clouds or city far below.
+（效果說明:由高空垂直向下拍,人像在空中）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🔭 鏡頭・視角] 螺旋透視
+【效果:螺旋透視 /spiralperspective】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Camera looking straight down a spiral staircase, the person standing in the centre of the spiral, strong circular geometry.
+（效果說明:由上往下望螺旋樓梯,人物在中心）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[💡 光線・氛圍] 黃金時刻
+【效果:黃金時刻 /goldenhour】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Golden hour lighting: warm low sun behind and to the side of the person, glowing rim light, dreamy warm orange tones, city horizon.
+（效果說明:日落側逆光,暖金色輪廓光）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[💡 光線・氛圍] 窗光
+【效果:窗光 /windowlight】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Soft natural window light from the side, bright airy interior, gentle gradation on the face, green plants out of focus behind.
+（效果說明:大窗柔和自然光,明亮通透）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[💡 光線・氛圍] 電影感打光
+【效果:電影感打光 /cinematiclight】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Cinematic low-key lighting: deep dark background, strong directional key light with contrasting shadow across the face, moody film still look.
+（效果說明:深色背景、硬光,臉部有對比）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[💡 光線・氛圍] 光影遊戲
+【效果:光影遊戲 /shadowplay】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Hard light through window blinds casting striped shadows across the person and the wall, dramatic graphic shadows.
+（效果說明:條狀光影打在身上）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[💡 光線・氛圍] 城市散景
+【效果:城市散景 /citybokeh】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Night city setting with beautiful colourful bokeh lights behind, the person lit with a soft key light, shallow depth of field.
+（效果說明:夜景燈光散景,人面前清晰）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[💡 光線・氛圍] 剪影視角
+【效果:剪影視角 /silhouettepov】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Backlit silhouette: the person appears almost entirely in silhouette against a bright glowing sunset sky, edge light only, skyline in the distance.
+（效果說明:背光剪影,只見到輪廓）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[💡 光線・氛圍] 專業人像打光
+【效果:專業人像打光 /portraitpro】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Professional studio portrait lighting: soft key plus subtle rim light, clean neutral grey background, flawless natural skin.
+（效果說明:Studio 級人像,皮膚通透）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[💡 光線・氛圍] 幕後花絮
+【效果:幕後花絮 /behindthescene】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Behind-the-scenes film set: a cinema camera and softbox light in the foreground, the person reaching toward the lens, side angle as if documenting the shoot.
+（效果說明:有攝影機、燈箱入鏡,拍片現場）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 動態模糊
+【效果:動態模糊 /motionblur】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Strong motion blur streaking the background into light trails while the person's face stays sharp and turned toward the lens, feeling of speed.
+（效果說明:主體清晰、背景拉出速度線）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 凍結動作
+【效果:凍結動作 /freezeaction】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+High-speed freeze-frame: a moment frozen mid-air, an object suspended in space in front of the person, crisp and dramatic.
+（效果說明:瞬間凝固,物件浮於半空）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 行走動感
+【效果:行走動感 /walkmotion】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+The person walking briskly toward the camera, mid-stride, slight motion in the limbs, dynamic street lighting.
+（效果說明:邊走邊拍,自然步伐）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 動態對角線
+【效果:動態對角線 /dynamicdiagonal】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Dynamic diagonal composition: the person leaning back along a strong diagonal line, low wide angle, energetic pose.
+（效果說明:身體沿對角線傾斜,充滿動感）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 視差移動
+【效果:視差移動 /parallaxmove】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Parallax camera move: a blurred foreground object sweeping past the lens while the person stays in sharp focus, bokeh light spots behind.
+（效果說明:前景快速掠過,背景移動）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 動作凝結
+【效果:動作凝結 /actionfreeze】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Mid-air jump completely frozen at the peak, arms and legs spread energetically, blue sky background.
+（效果說明:跳躍中凝固在半空）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 動態鏡頭
+【效果:動態鏡頭 /dynamicshot】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Tracking shot with the person walking, background slightly streaked with motion, urban glass facade.
+（效果說明:跟拍走動,背景輕微流動）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 伸手向鏡頭
+【效果:伸手向鏡頭 /reachcamera】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+The person reaches a hand straight toward the camera, hand large and slightly out of focus in the foreground, dramatic close perspective.
+（效果說明:手伸向鏡頭,強迫透視）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 回頭望
+【效果:回頭望 /turnbacklook】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+The person walks away from the camera then turns their head back over the shoulder to look at the lens, candid and cinematic.
+（效果說明:背向鏡頭行走後回頭）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 吸睛定格
+【效果:吸睛定格 /scrollstopper】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Highly scroll-stopping composition: strong subject isolation, punchy contrast, bold pose, the person holding an object up toward the lens.
+（效果說明:強烈視覺衝擊,一望停低）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[⚡ 動作・動態] 爆紅鏡頭
+【效果:爆紅鏡頭 /viralshot】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Viral social-media style shot: the person thrusts a hand toward the camera with the palm open, dramatic wide-angle, face intense and in focus.
+（效果說明:社群爆款式構圖,手伸向鏡頭）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🚁 無人機航拍] 無人機環繞
+【效果:無人機環繞 /droneorbit】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Aerial orbit shot from a drone circling above the person, looking down at an angle, the environment sweeping around them.
+（效果說明:高空環繞角度,向下望）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🚁 無人機航拍] 無人機跟拍
+【效果:無人機跟拍 /dronechase】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Drone chase shot from behind and above, following the person walking away, sweeping landscape ahead of them.
+（效果說明:從背後上方跟隨移動）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🚁 無人機航拍] 無人機拉遠
+【效果:無人機拉遠 /dronepullback】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Drone pull-back: the camera very high and far away, the person tiny in the centre of a huge wide landscape.
+（效果說明:鏡頭快速拉遠,人越小,環境越大）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🚁 無人機航拍] 無人機飛越
+【效果:無人機飛越 /droneflyover】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Drone fly-over: near top-down view from directly above, the person small against geometric ground patterns.
+（效果說明:由上空飛過俯拍）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🚁 無人機航拍] 無人機俯衝變焦
+【效果:無人機俯衝變焦 /dronecrashzoom】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Drone crash-zoom: the camera plunges down from high altitude to a tight top-down view of the person's face, extreme perspective rush.
+（效果說明:由高空極速拉近到臉部）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🚁 無人機航拍] 無人機垂直下望
+【效果:無人機垂直下望 /dronevertical】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Perfectly vertical top-down drone shot, the person looking straight up into the lens.
+（效果說明:正上方垂直向下拍）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🚁 無人機航拍] 無人機環繞旋轉
+【效果:無人機環繞旋轉 /dronecircle】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Rotating drone shot with a circular motion blur around the frame, the person centred, background streaked in a swirl.
+（效果說明:鏡頭旋轉,背景有序地轉動）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🚁 無人機航拍] 無人機跟隨
+【效果:無人機跟隨 /dronefollow】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Drone following the person from behind as they climb steps, wide aerial view of the surroundings.
+（效果說明:跟隨人物上樓梯/前行）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🚁 無人機航拍] 上帝視角
+【效果:上帝視角 /dronegodview】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+God's-eye drone view from extremely high above, showing the person as a small figure within a vast architectural layout.
+（效果說明:極高空俯瞰,環境全貌）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 引導線
+【效果:引導線 /leadinglines】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Strong leading lines in the environment (railings, corridor, road) converging toward the person, drawing the eye straight to them.
+（效果說明:環境線條引導視線到人物）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 對稱構圖
+【效果:對稱構圖 /symmetryshot】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Perfectly symmetrical composition with the person centred on the axis of symmetry, identical elements mirrored left and right.
+（效果說明:左右完全對稱,人物置中）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 框中框
+【效果:框中框 /framewithinframe】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Frame-within-a-frame: the person is framed inside a rectangular doorway or window opening, deep layers behind.
+（效果說明:用門口/窗框住人物）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 前景框住
+【效果:前景框住 /foregroundframe】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Shoot through a blurred foreground (leaves, plants, railing) that frames the person, creating depth and a voyeuristic feel.
+（效果說明:用植物/物件作前景框）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 景深層次
+【效果:景深層次 /depthlayers】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Three clear depth layers: a blurred foreground object, the sharp person in the middle ground, and a soft distant background city.
+（效果說明:前景、主體、背景三層分明）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 消失點
+【效果:消失點 /vanishingpoint】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+The person stands exactly at the vanishing point of a long colonnade, all architectural lines converging on them.
+（效果說明:長廊線條匯聚,人在消失點）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 前後景深
+【效果:前後景深 /depthshot】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Depth shot: an out-of-focus foreground figure in the near left, the main person sharp in the mid-ground, layered storytelling composition.
+（效果說明:前面是散焦的人物背影,後面是清晰的人）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 視差層次
+【效果:視差層次 /parallaxshot】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Shooting through out-of-focus foreground leaves with the person sharp in the middle distance, natural parallax depth.
+（效果說明:前景葉子虛化,主體清晰）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 反光倒影
+【效果:反光倒影 /reflectionshot】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+The person seen together with their reflection in a mirror or glass wall, one sharp and one soft, artful and layered.
+（效果說明:鏡面/玻璃反光,一實一虛）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 玻璃偷望
+【效果:玻璃偷望 /glasspeek】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+The person seen through a glass pane, half-hidden by reflections and haze on the glass, moody voyeuristic framing.
+（效果說明:隔住玻璃望,玻璃有反光）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 透過物件
+【效果:透過物件 /throughobject】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Shoot through a circular object (lens hood, ring, pipe) held close to the camera, the person framed inside the circle.
+（效果說明:穿過圓環/物件望人物）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🖼 構圖技巧] 強迫透視
+【效果:強迫透視 /forcedperspective】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Forced perspective: a giant hand in the foreground appears to pinch or hold a tiny version of the person standing far behind.
+（效果說明:手掌係前景放大,人變成迷你）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 傳送門
+【效果:傳送門 /portalshot】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+A huge glowing blue circular portal opening in the air behind the person, magical energy ring, epic fantasy lighting.
+（效果說明:人物面前有發光圓形傳送門）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 分身效果
+【效果:分身效果 /cloneeffect】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Clone effect: the same person appears three times in one frame, standing side by side in identical poses.
+（效果說明:同一個人有三個分身）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 迷你世界
+【效果:迷你世界 /microworld】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Surreal miniature world: the person sitting on the rim of a giant coffee cup, warm kitchen bokeh background, scale illusion.
+（效果說明:人物坐在咖啡杯邊,超現實）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 開門揭示
+【效果:開門揭示 /doorreveal】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+The person stands in an open doorway that reveals a completely different glowing landscape inside, magical reveal, light spilling out.
+（效果說明:門口打開,門內是另一個世界）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 物件穿越
+【效果:物件穿越 /objecttransition】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Surreal transition: the city behind the person shatters into floating glass panels and light fragments.
+（效果說明:城市景象變成玻璃碎片）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 鏡中傳送門
+【效果:鏡中傳送門 /mirrorportal】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+The person looks into a mirror whose reflection shows a glowing magical portal world instead of the room.
+（效果說明:鏡入面有另一個發光世界）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 現實扭曲
+【效果:現實扭曲 /realitybend】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Reality-bending fisheye world: the city skyline curves dramatically around the person like a rolled-up photograph.
+（效果說明:城市彎曲成魚眼世界）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 地面倒影
+【效果:地面倒影 /groundreflection】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Wet ground after rain creating a perfect mirror reflection of the person below them, they walk toward the camera.
+（效果說明:雨後積水,完美鏡面倒影）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 錯覺鏡頭
+【效果:錯覺鏡頭 /illusionshot】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Illusion shot: a still reflective pool makes the person appear upside-down, water and sky blending seamlessly.
+（效果說明:水池倒影令人上下顛倒）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 接圖轉場
+【效果:接圖轉場 /matchcut】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Tight detail shot of the person's shoes stepping forward, designed as a match-cut transition frame, low angle.
+（效果說明:鞋/物件特寫,準備轉場）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 反光秘技
+【效果:反光秘技 /reflectionhack】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Reflection trick: the person's reflection in a glass window appears to look in a different direction, uncanny effect.
+（效果說明:玻璃倒影中出現另一個自己）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 揭示鏡頭
+【效果:揭示鏡頭 /revealshot】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Reveal shot: the person steps out from behind a wall or pillar, half of the body still hidden, teasing the reveal.
+（效果說明:從牆後慢慢現身）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 意想不到
+【效果:意想不到 /unexpectedshot】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Unexpected composition: camera extremely close and tilted, cropped unusually, the person looking straight into the lens.
+（效果說明:鏡頭極貼近,構圖出人意表）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[✨ 創意特效] 史詩視角
+【效果:史詩視角 /epicperspective】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Epic perspective: the person standing on a mountain summit with their back to the camera, vast valley and sunset ahead, cinematic scale.
+（效果說明:站在山頂,背向鏡頭,場面宏大）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🏙 背景・場景] 移除背景
+【效果:移除背景 /removebg】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Remove the background completely and place the person on a clean neutral studio background, subject cut out neatly.
+（效果說明:只留人物,背景乾淨）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🏙 背景・場景] 大自然背景
+【效果:大自然背景 /naturebackground】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Replace the background with a breathtaking nature scene: lake, mountains and forest under a soft sky, natural light.
+（效果說明:雪山湖泊森林）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🏙 背景・場景] 純色棚背景
+【效果:純色棚背景 /studiobackground】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Place the person in a professional photo studio with a plain seamless light-grey backdrop and soft studio lighting.
+（效果說明:淺灰攝影棚背景）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🏙 背景・場景] 城市天際線
+【效果:城市天際線 /citybackground】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Replace the background with a modern city skyline of glass skyscrapers by the water, bright daylight.
+（效果說明:摩天大樓城市背景）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🏙 背景・場景] 豪華別墅
+【效果:豪華別墅 /luxurybackground】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Place the person at a luxury villa infinity pool overlooking a lake at golden hour, elegant and expensive feel.
+（效果說明:泳池豪宅夕陽）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🏙 背景・場景] 極簡背景
+【效果:極簡背景 /minimalbackground】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Minimalist background: off-white wall with soft window light and one simple plant, clean negative space.
+（效果說明:米白牆身加植物）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🏙 背景・場景] 背景虛化
+【效果:背景虛化 /blurbackground】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Strongly blur the background into creamy bokeh so the person stands out sharply, soft outdoor light.
+（效果說明:背景大散景,人物突出）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🏙 背景・場景] 透明背景 PNG
+【效果:透明背景 PNG /transparentbg】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Cut the person out onto a fully transparent background, keeping clean crisp edges for PNG use.
+（效果說明:去背,PNG 透明底）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🎨 色彩・色調] 時尚雜誌色
+【效果:時尚雜誌色 /colorize】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Editorial fashion colour grade: soft pink and grey gradient background, cool magazine tones.
+（效果說明:粉紅/灰雜誌感背景色）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🎨 色彩・色調] 電影色調
+【效果:電影色調 /cinematiccolor】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Cinematic colour grade: teal-leaning shadows and desaturated skin, filmic contrast.
+（效果說明:青灰電影色）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🎨 色彩・色調] 復古色調
+【效果:復古色調 /vintagecolor】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Vintage colour grade: warm brown muted tones, faded film look, slight grain.
+（效果說明:暖棕、舊照片感）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🎨 色彩・色調] 粉彩色調
+【效果:粉彩色調 /pastelcolor】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Pastel colour grade: soft pink and lavender tones, delicate and airy.
+（效果說明:柔嫩粉紅淡紫）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🎨 色彩・色調] 暖色調
+【效果:暖色調 /warmcolor】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Warm colour grade: golden orange tones, glowing warm ambience.
+（效果說明:橙黃暖光）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🎨 色彩・色調] 冷色調
+【效果:冷色調 /coolcolor】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Cool colour grade: icy blue and cyan tones, crisp and clinical.
+（效果說明:藍青冷光）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🎨 色彩・色調] 青橙電影色
+【效果:青橙電影色 /tealorange】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Classic Hollywood teal-and-orange grade: orange skin tones against teal backgrounds.
+（效果說明:經典荷里活青橙）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🎨 色彩・色調] 陰鬱色調
+【效果:陰鬱色調 /moodycolor】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Moody dark grade: desaturated greys, deep shadows, brooding atmosphere.
+（效果說明:暗灰、氛圍感重）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🎨 色彩・色調] 鮮豔色調
+【效果:鮮豔色調 /vibrantcolor】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Vibrant saturated grade: rich punchy colours with high contrast.
+（效果說明:高飽和高彩度）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[🎨 色彩・色調] 黑白人像
+【效果:黑白人像 /bwportrait】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+High-contrast black-and-white portrait, rich tonal range, studio lighting.
+（效果說明:高對比黑白）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📸 拍攝風格] 專業形象照
+【效果:專業形象照 /professional】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Professional business headshot style: clean seamless light background, even flattering light, sharp and formal.
+（效果說明:乾淨、正式、可用於履歷）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📸 拍攝風格] 電影感
+【效果:電影感 /cinematic】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Cinematic movie-still style: dramatic lighting, wide dynamic range, anamorphic feel, epic location.
+（效果說明:大片質感、戲劇光）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📸 拍攝風格] 攝影棚風
+【效果:攝影棚風 /studio】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Studio photography style: seamless backdrop, controlled lighting, clean commercial look.
+（效果說明:棚拍、純背景）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📸 拍攝風格] 時裝風
+【效果:時裝風 /fashion】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+High-fashion editorial style: bold pose, couture styling feel, magazine-quality light and composition.
+（效果說明:雜誌時裝大片）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📸 拍攝風格] 奢華風
+【效果:奢華風 /luxury】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Luxury brand campaign style: elegant setting, refined lighting, premium aspirational mood.
+（效果說明:高級感、精品廣告）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📸 拍攝風格] 商業廣告
+【效果:商業廣告 /commercial】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Commercial advertising style: bright clean lighting, crisp detail, product-ad quality.
+（效果說明:乾淨商業拍攝）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📸 拍攝風格] 超寫實
+【效果:超寫實 /photorealistic】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Hyper-photorealistic rendering: natural skin texture, accurate anatomy, real-world lighting, no AI plastic look.
+（效果說明:極致真實,皮膚細節）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。
+
+
+[📸 拍攝風格] 雜誌編輯風
+【效果:雜誌編輯風 /editorial】
+請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:
+Magazine editorial style: storytelling composition, refined colour grade, thoughtful styling.
+（效果說明:有故事感、色調講究）
+規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>一鍵換角度 · Gemini 免費版（Gmail 登入即可）</title>
+<style>
+  :root{
+    --bg:#0b0d12; --bg2:#11141c; --card:#161a24; --card2:#1d2230; --line:#262c3b;
+    --txt:#e8ecf5; --dim:#8a93a8; --acc:#4f8cff; --acc2:#7c5cff; --ok:#2fbf71; --warn:#ffb020;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang HK","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;
+    font-size:15px;line-height:1.6}
+  img{display:block;max-width:100%}
+  button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+  a{color:var(--acc)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 14px 90px}
+  header{position:sticky;top:0;z-index:40;background:rgba(11,13,18,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .hbar{max-width:1120px;margin:0 auto;padding:10px 14px;display:flex;align-items:center;gap:10px}
+  .logo{font-weight:800;font-size:17px;white-space:nowrap}
+  .logo span{background:linear-gradient(92deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .grow{flex:1}
+  .pill{font-size:11.5px;padding:4px 9px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--dim);white-space:nowrap}
+  .pill.on{color:#fff;border-color:transparent;background:linear-gradient(92deg,var(--acc),var(--acc2))}
+  .pill.free{color:#9ff0c3;border-color:#1d5c38;background:#0d2418}
+  .iconbtn{width:34px;height:34px;border-radius:10px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;font-size:16px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin-top:12px}
+  .steptitle{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;margin-bottom:10px;flex-wrap:wrap}
+  .num{width:22px;height:22px;border-radius:50%;background:linear-gradient(92deg,var(--acc),var(--acc2));color:#fff;
+    font-size:12.5px;display:grid;place-items:center;font-weight:800;flex:none}
+  .hint{color:var(--dim);font-size:12.5px;font-weight:400}
+  .btn{padding:9px 14px;border-radius:10px;background:var(--card2);border:1px solid var(--line);font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+  .btn:active{transform:scale(.98)}
+  .btn.primary{background:linear-gradient(92deg,var(--acc),var(--acc2));border-color:transparent;color:#fff}
+  .btn.ghost{background:transparent}
+  .btn.sm{padding:6px 10px;font-size:12px}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  .big{font-size:15px;padding:13px 20px;border-radius:12px}
+  textarea,input[type=text]{background:#0f131c;color:var(--txt);border:1px solid var(--line);border-radius:10px;
+    padding:9px 11px;font-family:inherit;font-size:13px;outline:none;width:100%}
+  textarea{resize:vertical;min-height:70px;line-height:1.5}
+  .tabbar{display:flex;gap:7px;overflow-x:auto;padding:3px 0 9px;scrollbar-width:none}
+  .tabbar::-webkit-scrollbar{display:none}
+  .tab{white-space:nowrap;padding:7px 12px;border-radius:99px;background:var(--card2);border:1px solid var(--line);
+    font-size:13px;color:var(--dim);font-weight:600}
+  .tab.active{background:linear-gradient(92deg,var(--acc),var(--acc2));color:#fff;border-color:transparent}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+  @media(max-width:520px){.grid{grid-template-columns:repeat(3,1fr);gap:7px}}
+  .card{position:relative;border-radius:12px;overflow:hidden;background:var(--card2);border:1px solid var(--line);
+    text-align:left;transition:transform .12s,border-color .12s}
+  .card:active{transform:scale(.975)}
+  .card.done{border-color:var(--ok)}
+  .card img{width:100%;aspect-ratio:4/5;object-fit:cover;background:#0d1018}
+  .card .meta{padding:6px 7px 8px}
+  .card .name{display:block;font-size:12.5px;font-weight:700;line-height:1.3}
+  .card .slug{display:block;font-size:10.5px;color:var(--dim);margin-top:2px;font-family:ui-monospace,Menlo,monospace}
+  .card .cp{margin-top:6px;width:100%;padding:5px;border-radius:8px;background:#232a3b;font-size:11px;color:#cfe0ff;font-weight:600}
+  .card .cpmini{margin-top:4px;width:100%;padding:4px;border-radius:8px;background:transparent;border:1px dashed #38415a;font-size:10.5px;color:var(--dim)}
+  .notice{padding:10px 12px;border-radius:10px;font-size:12.8px;margin-bottom:10px;line-height:1.6}
+  .warnbox{background:#241c08;border:1px solid #5a4413;color:#ffd88a}
+  .infobox{background:#101a2e;border-color:#26406b;color:#a8c8ff;border:1px solid #26406b}
+  .okbox{background:#0d2418;border:1px solid #1d5c38;color:#9ff0c3}
+  .errbox{background:#2a1114;border:1px solid #6b2028;color:#ffb3bb}
+  .kv{font-size:13px;color:var(--dim);line-height:1.75}
+  .kv b{color:var(--txt)}
+  details summary{cursor:pointer;font-weight:700;font-size:13.5px;padding:5px 0}
+  ol.steps{margin:8px 0 0;padding-left:20px}
+  ol.steps li{margin-bottom:5px;font-size:13.5px}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#1b2130;border:1px solid var(--line);
+    color:#fff;padding:11px 16px;border-radius:99px;font-size:13px;z-index:120;opacity:0;transition:.25s;pointer-events:none;max-width:90vw;text-align:center}
+  .toast.show{opacity:1;bottom:34px}
+  .modal{position:fixed;inset:0;background:rgba(5,7,11,.9);backdrop-filter:blur(6px);z-index:80;display:none;padding:14px;overflow:auto}
+  .modal.show{display:block}
+  .mbox{max-width:760px;margin:24px auto;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .mhead{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .mhead h3{margin:0;font-size:16px}
+  .fileline{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--dim)}
+  .hero{background:linear-gradient(160deg,#16203a,#11141c 60%);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}
+  .hero h1{margin:0 0 6px;font-size:21px;line-height:1.35}
+  .hero p{margin:0;color:var(--dim);font-size:13.5px}
+  .hbtn{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .mini{font-size:12px;color:var(--dim)}
+  .catlbl{font-size:12.5px;font-weight:700;color:#9fb3d9;margin:14px 0 6px}
+</style>
+</head>
+<body>
+<header>
+  <div class="hbar">
+    <div class="logo">📷 一鍵<span>換角度</span></div>
+    <span class="pill free">● Gemini 免費版 · Gmail 登入</span>
+    <span class="pill" id="gemPill">未建立 Gem</span><span class="pill">輕量版(無示範圖)</span>
+    <div class="grow"></div>
+    <a class="iconbtn" href="./index.html" title="返回首頁">🏠</a>
+    <button class="iconbtn" id="helpBtn" title="使用說明">？</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="notice warnbox" id="iframeWarn" style="display:none;margin-top:12px"></div>
+  <div class="notice errbox" id="bootErr" style="display:none;margin-top:12px"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>唔使 API Key、唔使畀錢 —— 用 Gmail 登入 Gemini 就做到</h1>
+    <p>109 個拍攝效果已經寫好晒。你只需要:<b>上載一張相 → 撳一下效果 → 貼落 Gemini</b>。</p>
+    <div class="hbtn">
+      <button class="btn primary big" id="quickStart">🚀 即時開始(最快)</button>
+      <button class="btn big" id="copyGem">📋 複製 Gem 系統指令</button>
+      <button class="btn big" id="openGemCreate">↗️ 開啟 Gem 建立頁</button>
+    </div>
+    <div class="mini" style="margin-top:8px">建議用<b>電腦版 Chrome</b> 開 gemini.google.com(Gem 只可以在網頁版建立,手機建立唔到)。</div>
+  </section>
+
+  <!-- 三種免複製用法 -->
+  <section class="step">
+    <div class="steptitle">🎯 想「撳一下就得」?揀一種<span class="hint">三個方法都唔使 API Key、唔使錢</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px">
+      <div style="background:#151a24;border:1px solid #2a3243;border-radius:12px;padding:12px">
+        <div style="font-weight:800;font-size:14px">1️⃣ Chrome 擴充功能 <span class="mini">(最接近你想要)</span></div>
+        <div class="mini" style="margin:6px 0 9px">上載相去 Gemini → 撳擴充功能圖示 → 揀效果 → <b style="color:#9ff0c3">自動幫你打入去並送出</b>,完全唔使複製。</div>
+        <a class="btn primary sm" href="extension.zip" download>⬇️ 下載擴充功能(zip)</a>
+        <div class="mini" style="margin-top:7px">安裝:解壓 → Chrome 去 <b>chrome://extensions</b> → 開「開發人員模式」→「載入未封裝項目」→ 揀個資料夾</div>
+      </div>
+      <div style="background:#151a24;border:1px solid #2a3243;border-radius:12px;padding:12px">
+        <div style="font-weight:800;font-size:14px">2️⃣ Google Opal 迷你 App <span class="mini">(可分享畀朋友)</span></div>
+        <div class="mini" style="margin:6px 0 9px">免費、Gmail 登入、免 Key。上載相 + 揀選項就出圖,有分享連結,形式同你貼嗰個網站一樣。</div>
+        <a class="btn sm" href="opal-guide.md" download>📄 Opal 建立指南</a>
+      </div>
+      <div style="background:#151a24;border:1px solid #2a3243;border-radius:12px;padding:12px">
+        <div style="font-weight:800;font-size:14px">3️⃣ 快速指令框 <span class="mini">(而家即刻用)</span></div>
+        <div class="mini" style="margin:6px 0 9px">撳下面任何效果 → 指令自動填入「快速指令框」並全選 → Ctrl+C → 貼落 Gemini。</div>
+        <button class="btn sm" id="jumpBox">⬇️ 跳去快速指令框</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK BOX : always-visible prompt box -->
+  <section class="step" id="quickBox">
+    <div class="steptitle">⚡ 快速指令框<span class="hint">撳下面任何效果,指令會自動填入呢格並全選 → 你只需要 Ctrl+C / 長按複製</span></div>
+    <textarea id="bigBox" style="min-height:120px;font-size:12.5px" placeholder="① 上載相去 Gemini  ② 喺下面撳一個效果  ③ 呢格會自動填好指令 → 複製 → 貼落 Gemini"></textarea>
+    <div class="hbtn" style="margin-top:8px">
+      <button class="btn primary" id="bigCopy">📋 複製呢格指令</button>
+      <button class="btn" id="bigSelect">全選</button>
+      <button class="btn" id="bigClear">清空</button>
+      <div class="grow"></div>
+      <span class="mini" id="bigStatus">未選擇效果</span>
+    </div>
+  </section>
+
+  <!-- STEP 1 : Gem -->
+  <section class="step">
+    <div class="steptitle"><span class="num">1</span>建立你嘅專屬 Gem(一次性,2 分鐘)<span class="hint">之後每次開新對話,佢已經識做</span></div>
+    <ol class="steps">
+      <li>撳 <b>↗️ 開啟 Gem 建立頁</b>(或去 gemini.google.com → 左邊 <b>Explore Gems</b> → <b>New Gem</b>)。</li>
+      <li>名稱填:<b>一鍵換角度</b>。</li>
+      <li>撳 <b>📋 複製 Gem 系統指令</b>,貼入 <b>Instructions</b> 欄。</li>
+      <li><b>Default tool 揀「Create image」</b>(好重要:咁佢就會直接出圖)。</li>
+      <li>撳 <b>Save</b>。完成 ✅ — 之後每次開呢個 Gem,上載相就做得。</li>
+    </ol>
+    <div class="hbtn" style="margin-top:10px">
+      <button class="btn sm" id="viewGemInstr">👀 睇下指令內容</button>
+      <button class="btn sm" id="copyGem2">📋 複製指令</button>
+      <span class="mini" id="gemLen"></span>
+    </div>
+    <div class="notice infobox" style="margin-top:12px">
+      🤝 <b>想分享畀朋友(好似你貼嗰個網站咁)?</b> 建立好 Gem 之後,喺 Gem 頁面撳 <b>分享 / Share</b> → 複製連結 →
+      貼落下面呢格。我會幫你把它變成主按鈕,任何人都可以一撳即用(佢哋登入自己 Gmail 就得)。
+      <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+        <input type="text" id="gemShareUrl" placeholder="https://share.gemini.google/... 或 https://gemini.google.com/gem/..." style="flex:1;min-width:220px">
+        <button class="btn sm" id="saveShare">儲存連結</button>
+        <button class="btn sm ghost" id="openShare">開啟</button>
+      </div>
+      <div class="hbtn" style="margin-top:8px">
+        <button class="btn sm primary" id="makeShare">📤 產生「分享版」檔案</button>
+        <span class="mini">會下載一個已內建你 Gem 連結嘅 HTML —— 上傳去任何網頁空間(例如 Cloudflare Pages),朋友一撳就開你嘅 Gem。</span>
+      </div>
+      <div class="mini" id="shareState" style="margin-top:6px"></div>
+      <details style="margin-top:8px">
+        <summary>❓ 分享唔到?三步自我檢查(重要)</summary>
+        <div class="kv" style="margin-top:6px">
+          <b>① 你條連結係邊種?</b><br>
+          · <code>gemini.google.com/u/2/gem/xxxx</code> ← 呢個係<b>你自己嘅網址</b>(有 /u/2 帳戶索引),朋友開唔到,唔可以分享<br>
+          · <code>gemini.google.com/gem/xxxx?usp=sharing</code> ← ✅ 正確分享連結<br>
+          · <code>share.gemini.google/xxxx</code> ← ✅ Google 短連結,一樣得<br><br>
+          <b>② 去邊度攞正確連結?</b><br>
+          Gemini 左邊欄 → <b>Gems / Explore Gems</b>(Gem 清單頁)→ 搵到「一鍵換角度」→ 撳隔籬嘅 <b>分享</b> 圖示 →
+          彈出嘅視窗同 Google Drive 一樣 → 將「一般存取權」改為 <b>任何人擁有連結</b> → 撳 <b>複製連結</b>。<br>
+          ⚠️ <b>分享掣喺 Gem 清單頁,唔係喺對話入面</b>(對話入面網址就係 /u/2/gem/… 嗰種)。<br><br>
+          <b>③ 點知設定啱唔啱?</b><br>
+          複製連結 → 開 <b>無痕視窗</b>(Chrome: Ctrl+Shift+N / Mac: ⌘+Shift+N)→ 貼上 →
+          見到 Gem 可以傾偈 = ✅ 成功;話冇權限 = 分享未開(Workspace 帳戶可能係管理員限制對外分享,要改用個人 Gmail)。
+        </div>
+      </details>
+      <div class="hbtn" style="margin-top:8px">
+        <button class="btn sm ghost" id="openIncognitoTip">🔍 無痕視窗測試提示</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2 : use -->
+  <section class="step" id="useSec">
+    <div class="steptitle"><span class="num">2</span>上載相,撳效果,貼落 Gemini<span class="hint">唔使識打指令</span></div>
+    <div class="hbtn">
+      <button class="btn primary" id="quickStart2">🚀 開啟 Gemini 對話</button>
+      <button class="btn" id="copyOpen">📋 複製開場白</button>
+      <span class="mini">開場白:先同佢講清楚要做咩,之後只需要貼效果句。</span>
+    </div>
+    <ol class="steps" style="margin-top:10px">
+      <li>喺 Gemini 對話入面 <b>上載你嘅相</b>(正面、清晰、單人最好)。</li>
+      <li>返到呢度,喺下面搵到想要嘅效果,撳 <b>📋 複製指令</b>。</li>
+      <li>返去 Gemini,<b>貼上(Ctrl+V)</b> → 送出 → 等出圖。想第二個效果就重複 2-3 步。</li>
+    </ol>
+  </section>
+
+  <!-- STEP 3 : catalogue -->
+  <section class="step">
+    <div class="steptitle"><span class="num">3</span>效果目錄(109 個)<span class="hint">撳一下就複製好指令,直接貼落 Gemini</span></div>
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
+      <input type="text" id="search" placeholder="🔍 搜尋…例如 無人機、倒影、背景、黃金" style="flex:1;min-width:180px">
+      <button class="btn sm ghost" id="searchClear" style="display:none">清除</button>
+    </div>
+    <div class="tabbar" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- tips -->
+  <section class="step">
+    <div class="steptitle">💡 貼士同注意事項</div>
+    <div class="kv">
+      · <b>免費額度</b>:Gemini 免費帳號每日有圖片生成上限(Google 曾經公佈約 20 張/日,之後冇再公佈數字,亦可能隨時調整)。達到上限就等第二日,或者用付費方案。<br>
+      · <b>水印</b>:免費版輸出可能有可見水印 + Google 的 SynthID 隱形標記。<br>
+      · <b>唔想整 Gem 都得</b>:直接開新對話,貼上「開場白」+ 上載相 + 貼效果指令,效果一樣。<br>
+      · <b>人物相似度</b>:正面清晰、無遮擋、光線均勻嘅相效果最好。用生成圖再生成會越走越遠,重要用途請由原相重新生成。<br>
+      · <b>私隱</b>:相片係上傳去你自己嘅 Google 帳戶處理,同第三方 API 無關;呢個網頁本身唔會收集任何資料(純前端、冇後台)。<br>
+      · <b>手機</b>:Gem 建立要用電腦網頁版;建立後手機 App 都用到同一個 Gem。
+    </div>
+  </section>
+</div>
+
+<!-- modal: instruction viewer -->
+<div class="modal" id="instrModal">
+  <div class="mbox">
+    <div class="mhead"><h3>📋 Gem 系統指令</h3><div class="grow"></div><button class="iconbtn" data-close>✕</button></div>
+    <div class="mini" style="margin-bottom:8px">整段複製,貼落 Gem 嘅 <b>Instructions</b> 欄。之後 Default tool 記得揀「Create image」。</div>
+    <textarea id="instrText" style="min-height:340px;font-size:12.5px"></textarea>
+    <div class="hbtn" style="margin-top:10px">
+      <button class="btn primary" id="instrCopy">📋 複製整段</button>
+      <button class="btn" id="instrSelect">全選</button>
+      <div class="grow"></div>
+      <button class="btn ghost" data-close>關閉</button>
+    </div>
+  </div>
+</div>
+
+<!-- modal: prompt viewer -->
+<div class="modal" id="promptModal">
+  <div class="mbox">
+    <div class="mhead"><h3 id="pmTitle">效果指令</h3><div class="grow"></div><button class="iconbtn" data-close>✕</button></div>
+    <div class="notice okbox" id="pmNotice" style="margin-bottom:8px">✅ 已複製到剪貼簿 — 去 Gemini 貼上(Ctrl+V)就得。如果冇複製成功,可以喺下面手動全選複製。</div>
+    <textarea id="pmText" style="min-height:240px;font-size:12.5px"></textarea>
+    <div class="hbtn" style="margin-top:10px">
+      <button class="btn primary" id="pmCopy">📋 再複製一次</button>
+      <button class="btn" id="pmSelect">全選</button>
+      <button class="btn" id="pmOpen">↗️ 開啟 Gemini</button>
+      <div class="grow"></div>
+      <button class="btn ghost" data-close>關閉</button>
+    </div>
+  </div>
+</div>
+
+<!-- modal: link helper -->
+<div class="modal" id="linkModal">
+  <div class="mbox">
+    <div class="mhead"><h3>🔗 開啟連結</h3><div class="grow"></div><button class="iconbtn" data-close>✕</button></div>
+    <div class="notice warnbox">呢個預覽視窗唔准開新視窗。你可以複製下面嘅網址,貼落瀏覽器;或者<b>下載呢個 HTML 檔</b>,用 Chrome 開啟就可以直接撳掣跳轉。</div>
+    <input type="text" id="linkUrl" readonly>
+    <div class="hbtn" style="margin-top:10px">
+      <button class="btn primary" id="linkCopy">📋 複製網址</button>
+      <div class="grow"></div>
+      <button class="btn ghost" data-close>關閉</button>
+    </div>
+  </div>
+</div>
+
+<!-- modal: help -->
+<div class="modal" id="helpModal">
+  <div class="mbox">
+    <div class="mhead"><h3>❓ 點用(30 秒睇完)</h3><div class="grow"></div><button class="iconbtn" data-close>✕</button></div>
+    <div class="kv">
+      <b>最快嘅方法(唔使整 Gem)</b><br>
+      ① 撳「🚀 即時開始」→ 複製開場白 → 去 Gemini 貼上<br>
+      ② 上載你嘅相<br>
+      ③ 返到呢個網頁,撳任何效果卡片上面嘅「📋 複製指令」<br>
+      ④ 返去 Gemini 貼上 → 送出 → 出圖 🎉<br><br>
+      <b>順手啲嘅方法(整一次 Gem)</b><br>
+      照上面「步驟 1」做一次。之後每次只要:開「一鍵換角度」Gem → 上載相 → 貼效果指令。<br><br>
+      <b>點解要貼指令?</b>因為咁樣 Gemini 先 100% 知道你想點改(角度幾高、光線點打、背景係咩),
+      唔會亂猜。你完全唔需要自己寫 —— 呢個網頁已經幫你寫好 109 條。
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ================= 資料(由 build 腳本注入) ================= */
+const CATS = [["angle", "📐 相機角度・機位"], ["lens", "🔭 鏡頭・視角"], ["light", "💡 光線・氛圍"], ["motion", "⚡ 動作・動態"], ["drone", "🚁 無人機航拍"], ["compo", "🖼 構圖技巧"], ["vfx", "✨ 創意特效"], ["bg", "🏙 背景・場景"], ["color", "🎨 色彩・色調"], ["style", "📸 拍攝風格"]];
+const PRESETS = [{"slug": "overheadaction", "cat": "angle", "zh": "俯衝動作鏡頭", "tip": "高角度俯拍,人物抬頭望鏡頭、身體前傾,有動感", "short": "【俯衝動作鏡頭 /overheadaction】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:俯衝動作鏡頭 /overheadaction】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nRe-shoot from a dramatic high camera angle above the subject, around 60-70 degrees looking down. The person tilts their head up toward the lens and leans slightly forward toward the camera with an engaging expression, floor surface visible below.\n（效果說明:高角度俯拍,人物抬頭望鏡頭、身體前傾,有動感）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "cornerpov", "cat": "angle", "zh": "角落視角", "tip": "站在兩面牆的角落,由高處斜角拍攝", "short": "【角落視角 /cornerpov】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:角落視角 /cornerpov】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nPlace the camera high in the corner where two walls meet, shooting diagonally down at the person so both wall planes and the corner line are visible, moody architectural feel.\n（效果說明:站在兩面牆的角落,由高處斜角拍攝）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "dutchangle", "cat": "angle", "zh": "荷蘭傾斜角", "tip": "整張相傾斜 20-30 度,近距離、氣勢強", "short": "【荷蘭傾斜角 /dutchangle】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:荷蘭傾斜角 /dutchangle】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nTilt the camera 20-30 degrees to create a Dutch angle, near close-up from slightly above, the person leans toward the lens with a confident intense look.\n（效果說明:整張相傾斜 20-30 度,近距離、氣勢強）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "onepointperspective", "cat": "angle", "zh": "單點透視", "tip": "人物走在對稱長走廊中央,線條匯聚於消失點", "short": "【單點透視 /onepointperspective】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:單點透視 /onepointperspective】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nOne-point perspective composition: the person walks down the centre of a long symmetrical modern corridor, ceiling and floor lines receding to a single vanishing point directly behind them, warm strip lighting.\n（效果說明:人物走在對稱長走廊中央,線條匯聚於消失點）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "highangle", "cat": "angle", "zh": "高角度俯拍", "tip": "鏡頭高於眼睛向下拍,人物望鏡頭", "short": "【高角度俯拍 /highangle】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:高角度俯拍 /highangle】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nCamera above eye level looking down at the person at about 30-40 degrees, full body in frame, the person looks up into the lens.\n（效果說明:鏡頭高於眼睛向下拍,人物望鏡頭）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "lowangle", "cat": "angle", "zh": "低角度仰拍", "tip": "鏡頭低於腰部向上拍,人物顯氣勢", "short": "【低角度仰拍 /lowangle】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:低角度仰拍 /lowangle】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nCamera below waist height looking up, heroic low-angle, the person appears tall and powerful against the sky, slight wide-angle feel.\n（效果說明:鏡頭低於腰部向上拍,人物顯氣勢）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "wormview", "cat": "angle", "zh": "蟲眼仰視", "tip": "貼地向上拍,極低角度", "short": "【蟲眼仰視 /wormview】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:蟲眼仰視 /wormview】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nExtreme worm's-eye view: camera placed almost on the ground pointing straight up, exaggerated perspective, the person towers over the lens.\n（效果說明:貼地向上拍,極低角度）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "wormseye", "cat": "angle", "zh": "極低角度全身", "tip": "貼地全身,雙腿誇張放大", "short": "【極低角度全身 /wormseye】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:極低角度全身 /wormseye】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nExtreme low ground-level angle, full body, legs appear dramatically enlarged by the perspective, arms crossed, standing tall against a plain background.\n（效果說明:貼地全身,雙腿誇張放大）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "birdsview", "cat": "angle", "zh": "鳥瞰視角", "tip": "高處俯視,可見地面與環境", "short": "【鳥瞰視角 /birdsview】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:鳥瞰視角 /birdsview】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nBird's-eye view from high above, camera looking almost straight down, the ground and surroundings clearly visible around the person.\n（效果說明:高處俯視,可見地面與環境）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "droneview", "cat": "angle", "zh": "無人機俯視", "tip": "無人機高空俯拍,環境一覽無遺", "short": "【無人機俯視 /droneview】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:無人機俯視 /droneview】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nAerial drone view from high altitude looking down, wide environmental context, the person small in frame but clearly identifiable.\n（效果說明:無人機高空俯拍,環境一覽無遺）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "eyelevel", "cat": "angle", "zh": "平視鏡頭", "tip": "鏡頭與眼睛同高,最自然的視角", "short": "【平視鏡頭 /eyelevel】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:平視鏡頭 /eyelevel】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nStraight eye-level camera height, natural neutral perspective, medium shot with the person looking directly at the lens.\n（效果說明:鏡頭與眼睛同高,最自然的視角）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "crane", "cat": "angle", "zh": "搖臂高機位", "tip": "由高處吊臂遠攝,人顯得渺小", "short": "【搖臂高機位 /crane】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:搖臂高機位 /crane】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nHigh crane shot from a distant elevated position, the person is small in a vast empty space, wide framing with lots of negative space.\n（效果說明:由高處吊臂遠攝,人顯得渺小）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "widefull", "cat": "angle", "zh": "全景全身", "tip": "遠距離全景,包含大量環境", "short": "【全景全身 /widefull】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:全景全身 /widefull】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nWide full-body shot from a distance, the person placed small in frame with generous space and environmental context around them.\n（效果說明:遠距離全景,包含大量環境）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "toleft", "cat": "angle", "zh": "主體偏左", "tip": "人物置於畫面左側,右邊留空間", "short": "【主體偏左 /toleft】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:主體偏左 /toleft】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nKeep the same shot but shift the composition so the person stands in the left third of the frame, with open space on the right.\n（效果說明:人物置於畫面左側,右邊留空間）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "topright", "cat": "angle", "zh": "主體偏右上", "tip": "人物置於畫面右上,左下方留空間", "short": "【主體偏右上 /topright】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:主體偏右上 /topright】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nRecompose so the person is placed in the upper-right of the frame with generous empty space in the lower-left.\n（效果說明:人物置於畫面右上,左下方留空間）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "bottomleft", "cat": "angle", "zh": "主體偏左下", "tip": "人物置於畫面左下,右上方留空間", "short": "【主體偏左下 /bottomleft】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:主體偏左下 /bottomleft】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nRecompose with the person in the lower-left area of the frame, open sky or architecture filling the upper-right.\n（效果說明:人物置於畫面左下,右上方留空間）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "bottomright", "cat": "angle", "zh": "主體偏右下", "tip": "人物置於畫面右下,左上方留空間", "short": "【主體偏右下 /bottomright】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:主體偏右下 /bottomright】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nRecompose with the person in the lower-right area of the frame, negative space filling the upper-left.\n（效果說明:人物置於畫面右下,左上方留空間）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "tiltshift", "cat": "lens", "zh": "移軸微縮", "tip": "上下模糊、中間一條清晰,似模型公仔", "short": "【移軸微縮 /tiltshift】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:移軸微縮 /tiltshift】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nTilt-shift miniature effect: shot from high above, top and bottom of the frame heavily blurred, only a thin horizontal band in focus, the whole scene looks like a tiny scale model.\n（效果說明:上下模糊、中間一條清晰,似模型公仔）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "extremepov", "cat": "lens", "zh": "極端 POV", "tip": "鞋底貼近鏡頭,超低視角", "short": "【極端 POV /extremepov】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:極端 POV /extremepov】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nExtreme POV: camera placed right at the person's shoe so their sneaker sole dominates the foreground, very low angle looking up along the body.\n（效果說明:鞋底貼近鏡頭,超低視角）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "fisheyepov", "cat": "lens", "zh": "魚眼視角", "tip": "魚眼鏡頭由上往下拍,人臉置中,圓形變形", "short": "【魚眼視角 /fisheyepov】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:魚眼視角 /fisheyepov】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nFisheye lens look, camera above the person looking straight down, the head and shoulders at centre with strong barrel distortion around the edges.\n（效果說明:魚眼鏡頭由上往下拍,人臉置中,圓形變形）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "closeup", "cat": "lens", "zh": "人像特寫", "tip": "頭肩特寫,淺景深", "short": "【人像特寫 /closeup】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:人像特寫 /closeup】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nTight head-and-shoulders close-up, shallow depth of field, the face filling most of the frame with a clean out-of-focus background.\n（效果說明:頭肩特寫,淺景深）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "extremecloseupeyes", "cat": "lens", "zh": "極特寫眼神", "tip": "只取眼睛與上半臉,細節極致", "short": "【極特寫眼神 /extremecloseupeyes】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:極特寫眼神 /extremecloseupeyes】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nExtreme macro close-up cropping only the eyes and upper face, hyper-detailed skin texture, dramatic lighting on the eyes.\n（效果說明:只取眼睛與上半臉,細節極致）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "creativeangle", "cat": "lens", "zh": "創意角度", "tip": "鏡頭貼地仰拍,鞋底向鏡頭", "short": "【創意角度 /creativeangle】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:創意角度 /creativeangle】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nPlayful creative angle: camera on the ground, one foot extending toward the lens with the sole visible in the foreground, the person leaning over the camera.\n（效果說明:鏡頭貼地仰拍,鞋底向鏡頭）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "giantperspective", "cat": "lens", "zh": "巨大化視角", "tip": "頭極近鏡頭、身體縮遠,似巨人", "short": "【巨大化視角 /giantperspective】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:巨大化視角 /giantperspective】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nForced giant perspective: the face and hand are very close to the lens while the body recedes far below, making the person look like a giant looking down at the camera.\n（效果說明:頭極近鏡頭、身體縮遠,似巨人）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "portrait", "cat": "lens", "zh": "半身人像", "tip": "正面半身,眼神接觸,背景虛化", "short": "【半身人像 /portrait】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:半身人像 /portrait】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nClassic portrait framing, chest-up, direct eye contact with the lens, soft flattering light, beautifully blurred background.\n（效果說明:正面半身,眼神接觸,背景虛化）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "cinematicpov", "cat": "lens", "zh": "電影感 POV", "tip": "鏡頭貼近腳邊向上拍,電影感", "short": "【電影感 POV /cinematicpov】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:電影感 POV /cinematicpov】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nCinematic first-person-style angle: camera low near the person's feet pointing up, wide anamorphic feel, dramatic sky behind.\n（效果說明:鏡頭貼近腳邊向上拍,電影感）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "perspectivehack", "cat": "lens", "zh": "視角魔法", "tip": "用眼鏡/物件框住人,玩味十足", "short": "【視角魔法 /perspectivehack】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:視角魔法 /perspectivehack】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nPerspective trick: shoot through the empty frame of a pair of glasses held close to the lens so the person appears small inside the lens frame.\n（效果說明:用眼鏡/物件框住人,玩味十足）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "skyfall", "cat": "lens", "zh": "墮天視角", "tip": "由高空垂直向下拍,人像在空中", "short": "【墮天視角 /skyfall】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:墮天視角 /skyfall】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nVertical top-down shot from far above as if falling toward the person, the person looks up at the camera, clouds or city far below.\n（效果說明:由高空垂直向下拍,人像在空中）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "spiralperspective", "cat": "lens", "zh": "螺旋透視", "tip": "由上往下望螺旋樓梯,人物在中心", "short": "【螺旋透視 /spiralperspective】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:螺旋透視 /spiralperspective】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nCamera looking straight down a spiral staircase, the person standing in the centre of the spiral, strong circular geometry.\n（效果說明:由上往下望螺旋樓梯,人物在中心）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "goldenhour", "cat": "light", "zh": "黃金時刻", "tip": "日落側逆光,暖金色輪廓光", "short": "【黃金時刻 /goldenhour】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:黃金時刻 /goldenhour】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nGolden hour lighting: warm low sun behind and to the side of the person, glowing rim light, dreamy warm orange tones, city horizon.\n（效果說明:日落側逆光,暖金色輪廓光）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "windowlight", "cat": "light", "zh": "窗光", "tip": "大窗柔和自然光,明亮通透", "short": "【窗光 /windowlight】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:窗光 /windowlight】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nSoft natural window light from the side, bright airy interior, gentle gradation on the face, green plants out of focus behind.\n（效果說明:大窗柔和自然光,明亮通透）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "cinematiclight", "cat": "light", "zh": "電影感打光", "tip": "深色背景、硬光,臉部有對比", "short": "【電影感打光 /cinematiclight】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:電影感打光 /cinematiclight】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nCinematic low-key lighting: deep dark background, strong directional key light with contrasting shadow across the face, moody film still look.\n（效果說明:深色背景、硬光,臉部有對比）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "shadowplay", "cat": "light", "zh": "光影遊戲", "tip": "條狀光影打在身上", "short": "【光影遊戲 /shadowplay】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:光影遊戲 /shadowplay】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nHard light through window blinds casting striped shadows across the person and the wall, dramatic graphic shadows.\n（效果說明:條狀光影打在身上）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "citybokeh", "cat": "light", "zh": "城市散景", "tip": "夜景燈光散景,人面前清晰", "short": "【城市散景 /citybokeh】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:城市散景 /citybokeh】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nNight city setting with beautiful colourful bokeh lights behind, the person lit with a soft key light, shallow depth of field.\n（效果說明:夜景燈光散景,人面前清晰）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "silhouettepov", "cat": "light", "zh": "剪影視角", "tip": "背光剪影,只見到輪廓", "short": "【剪影視角 /silhouettepov】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:剪影視角 /silhouettepov】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nBacklit silhouette: the person appears almost entirely in silhouette against a bright glowing sunset sky, edge light only, skyline in the distance.\n（效果說明:背光剪影,只見到輪廓）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "portraitpro", "cat": "light", "zh": "專業人像打光", "tip": "Studio 級人像,皮膚通透", "short": "【專業人像打光 /portraitpro】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:專業人像打光 /portraitpro】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nProfessional studio portrait lighting: soft key plus subtle rim light, clean neutral grey background, flawless natural skin.\n（效果說明:Studio 級人像,皮膚通透）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "behindthescene", "cat": "light", "zh": "幕後花絮", "tip": "有攝影機、燈箱入鏡,拍片現場", "short": "【幕後花絮 /behindthescene】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:幕後花絮 /behindthescene】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nBehind-the-scenes film set: a cinema camera and softbox light in the foreground, the person reaching toward the lens, side angle as if documenting the shoot.\n（效果說明:有攝影機、燈箱入鏡,拍片現場）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "motionblur", "cat": "motion", "zh": "動態模糊", "tip": "主體清晰、背景拉出速度線", "short": "【動態模糊 /motionblur】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:動態模糊 /motionblur】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nStrong motion blur streaking the background into light trails while the person's face stays sharp and turned toward the lens, feeling of speed.\n（效果說明:主體清晰、背景拉出速度線）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "freezeaction", "cat": "motion", "zh": "凍結動作", "tip": "瞬間凝固,物件浮於半空", "short": "【凍結動作 /freezeaction】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:凍結動作 /freezeaction】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nHigh-speed freeze-frame: a moment frozen mid-air, an object suspended in space in front of the person, crisp and dramatic.\n（效果說明:瞬間凝固,物件浮於半空）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "walkmotion", "cat": "motion", "zh": "行走動感", "tip": "邊走邊拍,自然步伐", "short": "【行走動感 /walkmotion】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:行走動感 /walkmotion】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nThe person walking briskly toward the camera, mid-stride, slight motion in the limbs, dynamic street lighting.\n（效果說明:邊走邊拍,自然步伐）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "dynamicdiagonal", "cat": "motion", "zh": "動態對角線", "tip": "身體沿對角線傾斜,充滿動感", "short": "【動態對角線 /dynamicdiagonal】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:動態對角線 /dynamicdiagonal】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nDynamic diagonal composition: the person leaning back along a strong diagonal line, low wide angle, energetic pose.\n（效果說明:身體沿對角線傾斜,充滿動感）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "parallaxmove", "cat": "motion", "zh": "視差移動", "tip": "前景快速掠過,背景移動", "short": "【視差移動 /parallaxmove】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:視差移動 /parallaxmove】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nParallax camera move: a blurred foreground object sweeping past the lens while the person stays in sharp focus, bokeh light spots behind.\n（效果說明:前景快速掠過,背景移動）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "actionfreeze", "cat": "motion", "zh": "動作凝結", "tip": "跳躍中凝固在半空", "short": "【動作凝結 /actionfreeze】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:動作凝結 /actionfreeze】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nMid-air jump completely frozen at the peak, arms and legs spread energetically, blue sky background.\n（效果說明:跳躍中凝固在半空）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "dynamicshot", "cat": "motion", "zh": "動態鏡頭", "tip": "跟拍走動,背景輕微流動", "short": "【動態鏡頭 /dynamicshot】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:動態鏡頭 /dynamicshot】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nTracking shot with the person walking, background slightly streaked with motion, urban glass facade.\n（效果說明:跟拍走動,背景輕微流動）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "reachcamera", "cat": "motion", "zh": "伸手向鏡頭", "tip": "手伸向鏡頭,強迫透視", "short": "【伸手向鏡頭 /reachcamera】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:伸手向鏡頭 /reachcamera】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nThe person reaches a hand straight toward the camera, hand large and slightly out of focus in the foreground, dramatic close perspective.\n（效果說明:手伸向鏡頭,強迫透視）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "turnbacklook", "cat": "motion", "zh": "回頭望", "tip": "背向鏡頭行走後回頭", "short": "【回頭望 /turnbacklook】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:回頭望 /turnbacklook】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nThe person walks away from the camera then turns their head back over the shoulder to look at the lens, candid and cinematic.\n（效果說明:背向鏡頭行走後回頭）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "scrollstopper", "cat": "motion", "zh": "吸睛定格", "tip": "強烈視覺衝擊,一望停低", "short": "【吸睛定格 /scrollstopper】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:吸睛定格 /scrollstopper】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nHighly scroll-stopping composition: strong subject isolation, punchy contrast, bold pose, the person holding an object up toward the lens.\n（效果說明:強烈視覺衝擊,一望停低）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "viralshot", "cat": "motion", "zh": "爆紅鏡頭", "tip": "社群爆款式構圖,手伸向鏡頭", "short": "【爆紅鏡頭 /viralshot】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:爆紅鏡頭 /viralshot】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nViral social-media style shot: the person thrusts a hand toward the camera with the palm open, dramatic wide-angle, face intense and in focus.\n（效果說明:社群爆款式構圖,手伸向鏡頭）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "droneorbit", "cat": "drone", "zh": "無人機環繞", "tip": "高空環繞角度,向下望", "short": "【無人機環繞 /droneorbit】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:無人機環繞 /droneorbit】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nAerial orbit shot from a drone circling above the person, looking down at an angle, the environment sweeping around them.\n（效果說明:高空環繞角度,向下望）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "dronechase", "cat": "drone", "zh": "無人機跟拍", "tip": "從背後上方跟隨移動", "short": "【無人機跟拍 /dronechase】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:無人機跟拍 /dronechase】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nDrone chase shot from behind and above, following the person walking away, sweeping landscape ahead of them.\n（效果說明:從背後上方跟隨移動）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "dronepullback", "cat": "drone", "zh": "無人機拉遠", "tip": "鏡頭快速拉遠,人越小,環境越大", "short": "【無人機拉遠 /dronepullback】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:無人機拉遠 /dronepullback】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nDrone pull-back: the camera very high and far away, the person tiny in the centre of a huge wide landscape.\n（效果說明:鏡頭快速拉遠,人越小,環境越大）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "droneflyover", "cat": "drone", "zh": "無人機飛越", "tip": "由上空飛過俯拍", "short": "【無人機飛越 /droneflyover】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:無人機飛越 /droneflyover】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nDrone fly-over: near top-down view from directly above, the person small against geometric ground patterns.\n（效果說明:由上空飛過俯拍）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "dronecrashzoom", "cat": "drone", "zh": "無人機俯衝變焦", "tip": "由高空極速拉近到臉部", "short": "【無人機俯衝變焦 /dronecrashzoom】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:無人機俯衝變焦 /dronecrashzoom】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nDrone crash-zoom: the camera plunges down from high altitude to a tight top-down view of the person's face, extreme perspective rush.\n（效果說明:由高空極速拉近到臉部）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "dronevertical", "cat": "drone", "zh": "無人機垂直下望", "tip": "正上方垂直向下拍", "short": "【無人機垂直下望 /dronevertical】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:無人機垂直下望 /dronevertical】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nPerfectly vertical top-down drone shot, the person looking straight up into the lens.\n（效果說明:正上方垂直向下拍）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "dronecircle", "cat": "drone", "zh": "無人機環繞旋轉", "tip": "鏡頭旋轉,背景有序地轉動", "short": "【無人機環繞旋轉 /dronecircle】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:無人機環繞旋轉 /dronecircle】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nRotating drone shot with a circular motion blur around the frame, the person centred, background streaked in a swirl.\n（效果說明:鏡頭旋轉,背景有序地轉動）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "dronefollow", "cat": "drone", "zh": "無人機跟隨", "tip": "跟隨人物上樓梯/前行", "short": "【無人機跟隨 /dronefollow】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:無人機跟隨 /dronefollow】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nDrone following the person from behind as they climb steps, wide aerial view of the surroundings.\n（效果說明:跟隨人物上樓梯/前行）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "dronegodview", "cat": "drone", "zh": "上帝視角", "tip": "極高空俯瞰,環境全貌", "short": "【上帝視角 /dronegodview】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:上帝視角 /dronegodview】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nGod's-eye drone view from extremely high above, showing the person as a small figure within a vast architectural layout.\n（效果說明:極高空俯瞰,環境全貌）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "leadinglines", "cat": "compo", "zh": "引導線", "tip": "環境線條引導視線到人物", "short": "【引導線 /leadinglines】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:引導線 /leadinglines】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nStrong leading lines in the environment (railings, corridor, road) converging toward the person, drawing the eye straight to them.\n（效果說明:環境線條引導視線到人物）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "symmetryshot", "cat": "compo", "zh": "對稱構圖", "tip": "左右完全對稱,人物置中", "short": "【對稱構圖 /symmetryshot】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:對稱構圖 /symmetryshot】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nPerfectly symmetrical composition with the person centred on the axis of symmetry, identical elements mirrored left and right.\n（效果說明:左右完全對稱,人物置中）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "framewithinframe", "cat": "compo", "zh": "框中框", "tip": "用門口/窗框住人物", "short": "【框中框 /framewithinframe】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:框中框 /framewithinframe】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nFrame-within-a-frame: the person is framed inside a rectangular doorway or window opening, deep layers behind.\n（效果說明:用門口/窗框住人物）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "foregroundframe", "cat": "compo", "zh": "前景框住", "tip": "用植物/物件作前景框", "short": "【前景框住 /foregroundframe】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:前景框住 /foregroundframe】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nShoot through a blurred foreground (leaves, plants, railing) that frames the person, creating depth and a voyeuristic feel.\n（效果說明:用植物/物件作前景框）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "depthlayers", "cat": "compo", "zh": "景深層次", "tip": "前景、主體、背景三層分明", "short": "【景深層次 /depthlayers】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:景深層次 /depthlayers】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nThree clear depth layers: a blurred foreground object, the sharp person in the middle ground, and a soft distant background city.\n（效果說明:前景、主體、背景三層分明）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "vanishingpoint", "cat": "compo", "zh": "消失點", "tip": "長廊線條匯聚,人在消失點", "short": "【消失點 /vanishingpoint】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:消失點 /vanishingpoint】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nThe person stands exactly at the vanishing point of a long colonnade, all architectural lines converging on them.\n（效果說明:長廊線條匯聚,人在消失點）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "depthshot", "cat": "compo", "zh": "前後景深", "tip": "前面是散焦的人物背影,後面是清晰的人", "short": "【前後景深 /depthshot】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:前後景深 /depthshot】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nDepth shot: an out-of-focus foreground figure in the near left, the main person sharp in the mid-ground, layered storytelling composition.\n（效果說明:前面是散焦的人物背影,後面是清晰的人）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "parallaxshot", "cat": "compo", "zh": "視差層次", "tip": "前景葉子虛化,主體清晰", "short": "【視差層次 /parallaxshot】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:視差層次 /parallaxshot】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nShooting through out-of-focus foreground leaves with the person sharp in the middle distance, natural parallax depth.\n（效果說明:前景葉子虛化,主體清晰）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "reflectionshot", "cat": "compo", "zh": "反光倒影", "tip": "鏡面/玻璃反光,一實一虛", "short": "【反光倒影 /reflectionshot】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:反光倒影 /reflectionshot】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nThe person seen together with their reflection in a mirror or glass wall, one sharp and one soft, artful and layered.\n（效果說明:鏡面/玻璃反光,一實一虛）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "glasspeek", "cat": "compo", "zh": "玻璃偷望", "tip": "隔住玻璃望,玻璃有反光", "short": "【玻璃偷望 /glasspeek】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:玻璃偷望 /glasspeek】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nThe person seen through a glass pane, half-hidden by reflections and haze on the glass, moody voyeuristic framing.\n（效果說明:隔住玻璃望,玻璃有反光）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "throughobject", "cat": "compo", "zh": "透過物件", "tip": "穿過圓環/物件望人物", "short": "【透過物件 /throughobject】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:透過物件 /throughobject】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nShoot through a circular object (lens hood, ring, pipe) held close to the camera, the person framed inside the circle.\n（效果說明:穿過圓環/物件望人物）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "forcedperspective", "cat": "compo", "zh": "強迫透視", "tip": "手掌係前景放大,人變成迷你", "short": "【強迫透視 /forcedperspective】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:強迫透視 /forcedperspective】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nForced perspective: a giant hand in the foreground appears to pinch or hold a tiny version of the person standing far behind.\n（效果說明:手掌係前景放大,人變成迷你）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "portalshot", "cat": "vfx", "zh": "傳送門", "tip": "人物面前有發光圓形傳送門", "short": "【傳送門 /portalshot】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:傳送門 /portalshot】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nA huge glowing blue circular portal opening in the air behind the person, magical energy ring, epic fantasy lighting.\n（效果說明:人物面前有發光圓形傳送門）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "cloneeffect", "cat": "vfx", "zh": "分身效果", "tip": "同一個人有三個分身", "short": "【分身效果 /cloneeffect】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:分身效果 /cloneeffect】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nClone effect: the same person appears three times in one frame, standing side by side in identical poses.\n（效果說明:同一個人有三個分身）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "microworld", "cat": "vfx", "zh": "迷你世界", "tip": "人物坐在咖啡杯邊,超現實", "short": "【迷你世界 /microworld】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:迷你世界 /microworld】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nSurreal miniature world: the person sitting on the rim of a giant coffee cup, warm kitchen bokeh background, scale illusion.\n（效果說明:人物坐在咖啡杯邊,超現實）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "doorreveal", "cat": "vfx", "zh": "開門揭示", "tip": "門口打開,門內是另一個世界", "short": "【開門揭示 /doorreveal】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:開門揭示 /doorreveal】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nThe person stands in an open doorway that reveals a completely different glowing landscape inside, magical reveal, light spilling out.\n（效果說明:門口打開,門內是另一個世界）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "objecttransition", "cat": "vfx", "zh": "物件穿越", "tip": "城市景象變成玻璃碎片", "short": "【物件穿越 /objecttransition】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:物件穿越 /objecttransition】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nSurreal transition: the city behind the person shatters into floating glass panels and light fragments.\n（效果說明:城市景象變成玻璃碎片）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "mirrorportal", "cat": "vfx", "zh": "鏡中傳送門", "tip": "鏡入面有另一個發光世界", "short": "【鏡中傳送門 /mirrorportal】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:鏡中傳送門 /mirrorportal】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nThe person looks into a mirror whose reflection shows a glowing magical portal world instead of the room.\n（效果說明:鏡入面有另一個發光世界）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "realitybend", "cat": "vfx", "zh": "現實扭曲", "tip": "城市彎曲成魚眼世界", "short": "【現實扭曲 /realitybend】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:現實扭曲 /realitybend】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nReality-bending fisheye world: the city skyline curves dramatically around the person like a rolled-up photograph.\n（效果說明:城市彎曲成魚眼世界）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "groundreflection", "cat": "vfx", "zh": "地面倒影", "tip": "雨後積水,完美鏡面倒影", "short": "【地面倒影 /groundreflection】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:地面倒影 /groundreflection】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nWet ground after rain creating a perfect mirror reflection of the person below them, they walk toward the camera.\n（效果說明:雨後積水,完美鏡面倒影）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "illusionshot", "cat": "vfx", "zh": "錯覺鏡頭", "tip": "水池倒影令人上下顛倒", "short": "【錯覺鏡頭 /illusionshot】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:錯覺鏡頭 /illusionshot】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nIllusion shot: a still reflective pool makes the person appear upside-down, water and sky blending seamlessly.\n（效果說明:水池倒影令人上下顛倒）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "matchcut", "cat": "vfx", "zh": "接圖轉場", "tip": "鞋/物件特寫,準備轉場", "short": "【接圖轉場 /matchcut】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:接圖轉場 /matchcut】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nTight detail shot of the person's shoes stepping forward, designed as a match-cut transition frame, low angle.\n（效果說明:鞋/物件特寫,準備轉場）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "reflectionhack", "cat": "vfx", "zh": "反光秘技", "tip": "玻璃倒影中出現另一個自己", "short": "【反光秘技 /reflectionhack】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:反光秘技 /reflectionhack】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nReflection trick: the person's reflection in a glass window appears to look in a different direction, uncanny effect.\n（效果說明:玻璃倒影中出現另一個自己）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "revealshot", "cat": "vfx", "zh": "揭示鏡頭", "tip": "從牆後慢慢現身", "short": "【揭示鏡頭 /revealshot】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:揭示鏡頭 /revealshot】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nReveal shot: the person steps out from behind a wall or pillar, half of the body still hidden, teasing the reveal.\n（效果說明:從牆後慢慢現身）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "unexpectedshot", "cat": "vfx", "zh": "意想不到", "tip": "鏡頭極貼近,構圖出人意表", "short": "【意想不到 /unexpectedshot】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:意想不到 /unexpectedshot】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nUnexpected composition: camera extremely close and tilted, cropped unusually, the person looking straight into the lens.\n（效果說明:鏡頭極貼近,構圖出人意表）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "epicperspective", "cat": "vfx", "zh": "史詩視角", "tip": "站在山頂,背向鏡頭,場面宏大", "short": "【史詩視角 /epicperspective】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:史詩視角 /epicperspective】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nEpic perspective: the person standing on a mountain summit with their back to the camera, vast valley and sunset ahead, cinematic scale.\n（效果說明:站在山頂,背向鏡頭,場面宏大）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "removebg", "cat": "bg", "zh": "移除背景", "tip": "只留人物,背景乾淨", "short": "【移除背景 /removebg】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:移除背景 /removebg】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nRemove the background completely and place the person on a clean neutral studio background, subject cut out neatly.\n（效果說明:只留人物,背景乾淨）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "naturebackground", "cat": "bg", "zh": "大自然背景", "tip": "雪山湖泊森林", "short": "【大自然背景 /naturebackground】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:大自然背景 /naturebackground】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nReplace the background with a breathtaking nature scene: lake, mountains and forest under a soft sky, natural light.\n（效果說明:雪山湖泊森林）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "studiobackground", "cat": "bg", "zh": "純色棚背景", "tip": "淺灰攝影棚背景", "short": "【純色棚背景 /studiobackground】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:純色棚背景 /studiobackground】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nPlace the person in a professional photo studio with a plain seamless light-grey backdrop and soft studio lighting.\n（效果說明:淺灰攝影棚背景）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "citybackground", "cat": "bg", "zh": "城市天際線", "tip": "摩天大樓城市背景", "short": "【城市天際線 /citybackground】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:城市天際線 /citybackground】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nReplace the background with a modern city skyline of glass skyscrapers by the water, bright daylight.\n（效果說明:摩天大樓城市背景）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "luxurybackground", "cat": "bg", "zh": "豪華別墅", "tip": "泳池豪宅夕陽", "short": "【豪華別墅 /luxurybackground】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:豪華別墅 /luxurybackground】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nPlace the person at a luxury villa infinity pool overlooking a lake at golden hour, elegant and expensive feel.\n（效果說明:泳池豪宅夕陽）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "minimalbackground", "cat": "bg", "zh": "極簡背景", "tip": "米白牆身加植物", "short": "【極簡背景 /minimalbackground】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:極簡背景 /minimalbackground】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nMinimalist background: off-white wall with soft window light and one simple plant, clean negative space.\n（效果說明:米白牆身加植物）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "blurbackground", "cat": "bg", "zh": "背景虛化", "tip": "背景大散景,人物突出", "short": "【背景虛化 /blurbackground】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:背景虛化 /blurbackground】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nStrongly blur the background into creamy bokeh so the person stands out sharply, soft outdoor light.\n（效果說明:背景大散景,人物突出）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "transparentbg", "cat": "bg", "zh": "透明背景 PNG", "tip": "去背,PNG 透明底", "short": "【透明背景 PNG /transparentbg】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:透明背景 PNG /transparentbg】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nCut the person out onto a fully transparent background, keeping clean crisp edges for PNG use.\n（效果說明:去背,PNG 透明底）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "colorize", "cat": "color", "zh": "時尚雜誌色", "tip": "粉紅/灰雜誌感背景色", "short": "【時尚雜誌色 /colorize】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:時尚雜誌色 /colorize】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nEditorial fashion colour grade: soft pink and grey gradient background, cool magazine tones.\n（效果說明:粉紅/灰雜誌感背景色）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "cinematiccolor", "cat": "color", "zh": "電影色調", "tip": "青灰電影色", "short": "【電影色調 /cinematiccolor】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:電影色調 /cinematiccolor】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nCinematic colour grade: teal-leaning shadows and desaturated skin, filmic contrast.\n（效果說明:青灰電影色）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "vintagecolor", "cat": "color", "zh": "復古色調", "tip": "暖棕、舊照片感", "short": "【復古色調 /vintagecolor】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:復古色調 /vintagecolor】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nVintage colour grade: warm brown muted tones, faded film look, slight grain.\n（效果說明:暖棕、舊照片感）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "pastelcolor", "cat": "color", "zh": "粉彩色調", "tip": "柔嫩粉紅淡紫", "short": "【粉彩色調 /pastelcolor】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:粉彩色調 /pastelcolor】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nPastel colour grade: soft pink and lavender tones, delicate and airy.\n（效果說明:柔嫩粉紅淡紫）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "warmcolor", "cat": "color", "zh": "暖色調", "tip": "橙黃暖光", "short": "【暖色調 /warmcolor】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:暖色調 /warmcolor】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nWarm colour grade: golden orange tones, glowing warm ambience.\n（效果說明:橙黃暖光）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "coolcolor", "cat": "color", "zh": "冷色調", "tip": "藍青冷光", "short": "【冷色調 /coolcolor】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:冷色調 /coolcolor】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nCool colour grade: icy blue and cyan tones, crisp and clinical.\n（效果說明:藍青冷光）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "tealorange", "cat": "color", "zh": "青橙電影色", "tip": "經典荷里活青橙", "short": "【青橙電影色 /tealorange】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:青橙電影色 /tealorange】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nClassic Hollywood teal-and-orange grade: orange skin tones against teal backgrounds.\n（效果說明:經典荷里活青橙）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "moodycolor", "cat": "color", "zh": "陰鬱色調", "tip": "暗灰、氛圍感重", "short": "【陰鬱色調 /moodycolor】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:陰鬱色調 /moodycolor】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nMoody dark grade: desaturated greys, deep shadows, brooding atmosphere.\n（效果說明:暗灰、氛圍感重）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "vibrantcolor", "cat": "color", "zh": "鮮豔色調", "tip": "高飽和高彩度", "short": "【鮮豔色調 /vibrantcolor】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:鮮豔色調 /vibrantcolor】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nVibrant saturated grade: rich punchy colours with high contrast.\n（效果說明:高飽和高彩度）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "bwportrait", "cat": "color", "zh": "黑白人像", "tip": "高對比黑白", "short": "【黑白人像 /bwportrait】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:黑白人像 /bwportrait】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nHigh-contrast black-and-white portrait, rich tonal range, studio lighting.\n（效果說明:高對比黑白）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "professional", "cat": "style", "zh": "專業形象照", "tip": "乾淨、正式、可用於履歷", "short": "【專業形象照 /professional】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:專業形象照 /professional】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nProfessional business headshot style: clean seamless light background, even flattering light, sharp and formal.\n（效果說明:乾淨、正式、可用於履歷）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "cinematic", "cat": "style", "zh": "電影感", "tip": "大片質感、戲劇光", "short": "【電影感 /cinematic】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:電影感 /cinematic】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nCinematic movie-still style: dramatic lighting, wide dynamic range, anamorphic feel, epic location.\n（效果說明:大片質感、戲劇光）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "studio", "cat": "style", "zh": "攝影棚風", "tip": "棚拍、純背景", "short": "【攝影棚風 /studio】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:攝影棚風 /studio】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nStudio photography style: seamless backdrop, controlled lighting, clean commercial look.\n（效果說明:棚拍、純背景）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "fashion", "cat": "style", "zh": "時裝風", "tip": "雜誌時裝大片", "short": "【時裝風 /fashion】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:時裝風 /fashion】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nHigh-fashion editorial style: bold pose, couture styling feel, magazine-quality light and composition.\n（效果說明:雜誌時裝大片）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "luxury", "cat": "style", "zh": "奢華風", "tip": "高級感、精品廣告", "short": "【奢華風 /luxury】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:奢華風 /luxury】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nLuxury brand campaign style: elegant setting, refined lighting, premium aspirational mood.\n（效果說明:高級感、精品廣告）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "commercial", "cat": "style", "zh": "商業廣告", "tip": "乾淨商業拍攝", "short": "【商業廣告 /commercial】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:商業廣告 /commercial】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nCommercial advertising style: bright clean lighting, crisp detail, product-ad quality.\n（效果說明:乾淨商業拍攝）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "photorealistic", "cat": "style", "zh": "超寫實", "tip": "極致真實,皮膚細節", "short": "【超寫實 /photorealistic】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:超寫實 /photorealistic】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nHyper-photorealistic rendering: natural skin texture, accurate anatomy, real-world lighting, no AI plastic look.\n（效果說明:極致真實,皮膚細節）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}, {"slug": "editorial", "cat": "style", "zh": "雜誌編輯風", "tip": "有故事感、色調講究", "short": "【雜誌編輯風 /editorial】請用呢個效果改我上載嘅相,記住保持我嘅樣貌、髮型、眼鏡同衣著完全一樣。", "prompt": "【效果:雜誌編輯風 /editorial】\n請以我上載嘅相為基礎生成新圖,唔要換人。效果要求:\nMagazine editorial style: storytelling composition, refined colour grade, thoughtful styling.\n（效果說明:有故事感、色調講究）\n規則:保持同一個人 —— 五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著完全一致;唔准換人、美化、瘦身、變老或增加其他人。用寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。"}];   // {slug,cat,zh,tip,short,prompt,img}
+const THUMBS = {};
+const GEM_INSTRUCTION = "【角色】你係「一鍵換角度」AI 攝影師。用戶會上載一張自己嘅相,然後用中文效果名或 /英文代號揀效果。你要用原生圖片生成,把同一張相改成該效果,而人物完全不變。\n\n【最高規則:人物一致性】\n1. 每次都必須係同一個人:五官、臉型、膚色、髮型、髮色、鬍鬚/眼鏡、身形比例、年齡、衣著,完全一致。唔准美化、瘦身、變老、換人、加人。\n2. 默認只改「鏡頭角度、光線、色調」,盡量保留原本場景同背景。只有當效果屬「背景 / 特效 / 色彩 / 風格」類,才可以大改場景,但人物一定唔可以變。\n3. 保持寫實攝影質感:自然光線、正確解剖、手部正常、清晰對焦。\n\n【標準流程】\n① 用戶上載相片而未講效果 → 回覆「✅ 收到你嘅相。你可以直接貼上效果指令,或者話我知想睇邊個分類:📐角度 🔭鏡頭 💡光線 ⚡動作 🚁無人機 🖼構圖 ✨特效 🏙背景 🎨色彩 📸風格」\n② 用戶只講分類 → 列出該分類嘅效果名(中文名 + /英文代號),等佢覆名或編號。\n③ 用戶講出效果名,或者貼上「【效果:…】」形式嘅指令 → 即刻生成,唔好再問、唔好長篇解釋。如果指令內有英文描述,一律以英文描述為準。\n④ 每次只生成一張圖。生成後用一句話問「要唔要試下一個效果?」,並建議 2 個相關效果。\n\n【輸出格式】只回覆一句確認(例如「✅ 俯瞰動作,生成中…」),跟住直接出圖。唔好解釋技術原理。\n\n【編號模式(最方便)】用戶只打一個數字(1-109),就係下面「編號表」嘅第 N 項 → 直接生成,唔需要再確認。\n\n【編號表】\n1 俯衝動作鏡頭 | 2 角落視角 | 3 荷蘭傾斜角 | 4 單點透視 | 5 高角度俯拍 | 6 低角度仰拍 | 7 蟲眼仰視 | 8 極低角度全身 | 9 鳥瞰視角 | 10 無人機俯視 | 11 平視鏡頭 | 12 搖臂高機位 | 13 全景全身 | 14 主體偏左 | 15 主體偏右上 | 16 主體偏左下 | 17 主體偏右下 | 18 移軸微縮 | 19 極端 POV | 20 魚眼視角 | 21 人像特寫 | 22 極特寫眼神 | 23 創意角度 | 24 巨大化視角 | 25 半身人像 | 26 電影感 POV | 27 視角魔法 | 28 墮天視角 | 29 螺旋透視 | 30 黃金時刻 | 31 窗光 | 32 電影感打光 | 33 光影遊戲 | 34 城市散景 | 35 剪影視角 | 36 專業人像打光 | 37 幕後花絮 | 38 動態模糊 | 39 凍結動作 | 40 行走動感 | 41 動態對角線 | 42 視差移動 | 43 動作凝結 | 44 動態鏡頭 | 45 伸手向鏡頭 | 46 回頭望 | 47 吸睛定格 | 48 爆紅鏡頭 | 49 無人機環繞 | 50 無人機跟拍 | 51 無人機拉遠 | 52 無人機飛越 | 53 無人機俯衝變焦 | 54 無人機垂直下望 | 55 無人機環繞旋轉 | 56 無人機跟隨 | 57 上帝視角 | 58 引導線 | 59 對稱構圖 | 60 框中框 | 61 前景框住 | 62 景深層次 | 63 消失點 | 64 前後景深 | 65 視差層次 | 66 反光倒影 | 67 玻璃偷望 | 68 透過物件 | 69 強迫透視 | 70 傳送門 | 71 分身效果 | 72 迷你世界 | 73 開門揭示 | 74 物件穿越 | 75 鏡中傳送門 | 76 現實扭曲 | 77 地面倒影 | 78 錯覺鏡頭 | 79 接圖轉場 | 80 反光秘技 | 81 揭示鏡頭 | 82 意想不到 | 83 史詩視角 | 84 移除背景 | 85 大自然背景 | 86 純色棚背景 | 87 城市天際線 | 88 豪華別墅 | 89 極簡背景 | 90 背景虛化 | 91 透明背景 PNG | 92 時尚雜誌色 | 93 電影色調 | 94 復古色調 | 95 粉彩色調 | 96 暖色調 | 97 冷色調 | 98 青橙電影色 | 99 陰鬱色調 | 100 鮮豔色調 | 101 黑白人像 | 102 專業形象照 | 103 電影感 | 104 攝影棚風 | 105 時裝風 | 106 奢華風 | 107 商業廣告 | 108 超寫實 | 109 雜誌編輯風\n\n【效果清單(用戶打中文名或英文代號時用)】\n📐 相機角度:俯瞰動作 overheadaction|角落視角 cornerpov|荷蘭傾斜角 dutchangle|單點透視 onepointperspective|高角度俯拍 highangle|低角度仰拍 lowangle|蟲眼仰視 wormview|極低角度全身 wormseye|鳥瞰視角 birdsview|無人機俯視 droneview|平視鏡頭 eyelevel|搖臂高機位 crane|全景全身 widefull|主體偏左 toleft|主體偏右上 topright|主體偏左下 bottomleft|主體偏右下 bottomright\n🔭 鏡頭視角:移軸微縮 tiltshift|極端POV鞋底 extremepov|魚眼視角 fisheyepov|人像特寫 closeup|極特寫眼神 extremecloseupeyes|創意角度 creativeangle|巨大化視角 giantperspective|半身人像 portrait|電影感POV cinematicpov|視角魔法(眼鏡框) perspectivehack|墮天視角 skyfall|螺旋透視 spiralperspective\n💡 光線氛圍:黃金時刻 goldenhour|窗光 windowlight|電影感打光 cinematiclight|光影遊戲 shadowplay|城市散景 citybokeh|剪影視角 silhouettepov|專業人像打光 portraitpro|幕後花絮 behindthescene\n⚡ 動作動態:動態模糊 motionblur|凍結動作 freezeaction|行走動感 walkmotion|動態對角線 dynamicdiagonal|視差移動 parallaxmove|動作凝結 actionfreeze|動態鏡頭 dynamicshot|伸手向鏡頭 reachcamera|回頭望 turnbacklook|吸睛定格 scrollstopper|爆紅鏡頭 viralshot\n🚁 無人機航拍:環繞 droneorbit|跟拍 dronechase|拉遠 dronepullback|飛越 droneflyover|俯衝變焦 dronecrashzoom|垂直下望 dronevertical|環繞旋轉 dronecircle|跟隨 dronefollow|上帝視角 dronegodview\n🖼 構圖技巧:引導線 leadinglines|對稱構圖 symmetryshot|框中框 framewithinframe|前景框住 foregroundframe|景深層次 depthlayers|消失點 vanishingpoint|前後景深 depthshot|視差層次 parallaxshot|反光倒影 reflectionshot|玻璃偷望 glasspeek|透過物件 throughobject|強迫透視 forcedperspective\n✨ 創意特效:傳送門 portalshot|分身效果 cloneeffect|迷你世界 microworld|開門揭示 doorreveal|物件穿越 objecttransition|鏡中傳送門 mirrorportal|現實扭曲 realitybend|地面倒影 groundreflection|錯覺鏡頭 illusionshot|接圖轉場 matchcut|反光秘技 reflectionhack|揭示鏡頭 revealshot|意想不到 unexpectedshot|史詩視角 epicperspective\n🏙 背景場景:移除背景 removebg|大自然背景 naturebackground|純色棚 studiobackground|城市天際線 citybackground|豪華別墅 luxurybackground|極簡背景 minimalbackground|背景虛化 blurbackground|透明背景透明PNG transparentbg\n🎨 色彩色調:時尚雜誌色 colorize|電影色調 cinematiccolor|復古 vintagecolor|粉彩 pastelcolor|暖色 warmcolor|冷色 coolcolor|青橙 tealorange|陰鬱 moodycolor|鮮豔 vibrantcolor|黑白 bwportrait\n📸 拍攝風格:專業形象照 professional|電影感 cinematic|攝影棚 studio|時裝 fashion|奢華 luxury|商業廣告 commercial|超寫實 photorealistic|雜誌編輯風 editorial\n\n【遇到問題時】如果生成結果唔似本人,提醒用戶:換一張更正面的相、光線均勻、單人、無遮擋,或加多一張全身相做參考;亦可以由原相重新生成一次。";
+const OPENING = "你好,我要用 Gemini 嘅圖片生成功能,幫我做「一鍵換角度」。\n我而家會上載一張我自己嘅相。之後我每次只會打一個數字(1-109)或者效果名,你就直接生成,唔需要再問我。\n規則:每次都要保持同一個人(五官、髮型、眼鏡、膚色、身形、衣著完全一致),唔准換人、美化或改變年齡;只改鏡頭角度、光線、背景或風格;寫實攝影、自然光線、手部正常。\n明白就回覆「✅ 收到,請上載相片」。";
+const LINKS = { app:'https://gemini.google.com/app', gemCreate:'https://gemini.google.com/gems/create' };
+/* 分享版會將呢行寫成你嘅 Gem 連結;亦可以用 ?gem=<連結> 臨時指定 */
+const GEM_LINK_DEFAULT = "https://gemini.google.com/gem/1iFCusGjDdGeAGqHGIyAaz1Ji-Pu17IYn?usp=sharing";
+const GEM_LINK_PARAM = (new URLSearchParams(location.search).get('gem') || '').trim();
+
+/* ================= 小工具 ================= */
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function toast(msg, ms=2800){ const t=$('#toast'); t.textContent=msg; t.classList.add('show');
+  clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'), ms); }
+const store = (() => { try{ localStorage.setItem('__t','1'); localStorage.removeItem('__t');
+    return {ok:true,s:localStorage}; }catch(e){ const m={}; return {ok:false,s:{getItem:k=>(k in m?m[k]:null),setItem:(k,v)=>{m[k]=String(v)}}};} })();
+
+/* 複製(含多重後備方案,連沙盒 iframe 都用得) */
+async function copyText(text){
+  try{ if(navigator.clipboard && window.isSecureContext){ await navigator.clipboard.writeText(text); return true; } }catch(e){}
+  try{
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly',''); 
+    ta.style.cssText = 'position:fixed;top:-1000px;left:-1000px;opacity:0';
+    document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, text.length);
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    if(ok) return true;
+  }catch(e){}
+  return false;
+}
+async function copyOrShow(text, title, note){
+  const ok = await copyText(text);
+  if(ok){ toast('✅ 已複製!去 Gemini 貼上(Ctrl+V)就得', 3000); }
+  $('#pmTitle').textContent = title || '效果指令';
+  $('#pmText').value = text;
+  const n = $('#pmNotice');
+  if(ok){
+    n.className = 'notice okbox';
+    n.innerHTML = '✅ 已複製到剪貼簿 — 去 Gemini 貼上(Ctrl+V)就得。';
+  }else{
+    n.className = 'notice warnbox';
+    n.innerHTML = '⚠️ 呢個環境唔准自動複製(常見於預覽視窗)。請撳下面 <b>全選</b> → Ctrl+C,或者下載呢個檔案用 Chrome 開啟就會自動複製。';
+  }
+  return ok;
+}
+function showLinkModal(url){
+  $('#linkUrl').value = url;
+  $('#linkModal').classList.add('show');
+}
+function openLink(url){
+  let w = null;
+  try{ w = window.open(url, '_blank', 'noopener'); }catch(e){}
+  if(!w){ $('#linkUrl').value = url; $('#linkModal').classList.add('show'); }
+}
+
+/* ================= 目錄 ================= */
+let curCat = CATS[0][0], query = '';
+function renderTabs(){
+  $('#tabs').innerHTML = CATS.map(([id,label]) =>
+    `<button class="tab ${id===curCat?'active':''}" data-cat="${id}">${label} <span style="opacity:.6;font-weight:500">${PRESETS.filter(p=>p.cat===id).length}</span></button>`).join('');
+  $$('#tabs .tab').forEach(b => b.onclick = () => { curCat=b.dataset.cat; renderTabs(); renderGrid(); });
+}
+function renderGrid(){
+  const q = query.trim().toLowerCase();
+  const list = q ? PRESETS.filter(p => (p.zh+p.slug+p.tip+p.prompt).toLowerCase().includes(q))
+                 : PRESETS.filter(p => p.cat === curCat);
+  $('#grid').innerHTML = list.map(p => `
+    <div class="card" data-slug="${p.slug}">
+      <span style="position:absolute;top:5px;right:5px;z-index:2;background:#000a;border:1px solid #fff3;color:#fff;
+        font-size:10.5px;font-weight:800;padding:2px 6px;border-radius:99px">#${PRESETS.indexOf(p)+1}</span>
+      <img loading="lazy" src="${THUMBS[p.slug]}" alt="${esc(p.zh)}"
+           onerror="this.style.background='linear-gradient(135deg,#20263a,#141a28)';this.alt='';this.removeAttribute('src')">
+      <div class="meta">
+        <span class="name">${esc(p.zh)}</span>
+        <span class="slug">/${p.slug}</span>
+        <button class="cp" data-copy="full">📋 複製指令</button>
+        <button class="cpmini" data-copy="short">只複製短句</button>
+      </div>
+    </div>`).join('');
+  $$('#grid .card').forEach(card => {
+    const p = PRESETS.find(x => x.slug === card.dataset.slug);
+    card.querySelector('[data-copy="full"]').onclick = async e => {
+      e.stopPropagation();
+      card.classList.add('done');
+      fillBigBox(p, 'full');
+      await copyOrShow(p.prompt, `${p.zh} /${p.slug}` + '：完整指令');
+      $('#promptModal').classList.add('show');
+    };
+    card.querySelector('[data-copy="short"]').onclick = async e => {
+      e.stopPropagation();
+      card.classList.add('done');
+      fillBigBox(p, 'short');
+      const ok = await copyText(p.short);
+      toast(ok ? `✅ 已複製短句:${p.zh}` : '⚠️ 自動複製被阻 → 指令已填入「快速指令框」,喺嗰度全選複製', 3800);
+    };
+  });
+}
+/* ================= 快速指令框(唔靠剪貼簿都用得到) ================= */
+function fillBigBox(p, kind){
+  const txt = kind === 'short' ? p.short : p.prompt;
+  const box = $('#bigBox');
+  box.value = txt;
+  $('#bigStatus').textContent = `已選擇:${p.zh} /${p.slug}${kind==='short' ? '(短句)' : ''}`;
+  try{ box.focus(); box.setSelectionRange(0, txt.length); }catch(e){}
+  box.scrollIntoView({behavior:'smooth', block:'center'});
+}
+$('#bigCopy').onclick = async () => {
+  const v = $('#bigBox').value.trim();
+  if(!v) return toast('先喺下面撳一個效果');
+  const ok = await copyText(v);
+  toast(ok ? '✅ 已複製!去 Gemini 貼上(Ctrl+V)' : '⚠️ 自動複製被阻 → 撳「全選」再 Ctrl+C / 長按複製', 4000);
+};
+$('#bigSelect').onclick = () => { const b = $('#bigBox'); b.focus(); b.setSelectionRange(0, b.value.length); };
+$('#jumpBox').onclick = () => { $('#quickBox').scrollIntoView({behavior:'smooth', block:'center'});
+  setTimeout(() => { const b = $('#bigBox'); b.focus(); }, 500); };
+$('#bigClear').onclick = () => { $('#bigBox').value = ''; $('#bigStatus').textContent = '未選擇效果'; };
+
+/* ================= 主按鈕 ================= */
+async function quickStart(){
+  const opening = OPENING;
+  const ok = await copyText(opening);
+  toast(ok ? '✅ 開場白已複製!而家去 Gemini 貼上 + 上載你嘅相' : '⚠️ 自動複製被阻,請用「複製開場白」按鈕', 4200);
+  openLink(LINKS.app);
+}
+$('#quickStart').onclick = quickStart;
+$('#quickStart2').onclick = quickStart;
+$('#openGemCreate').onclick = () => openLink(LINKS.gemCreate);
+$('#copyOpen').onclick = async () => { const ok = await copyText(OPENING);
+  toast(ok ? '✅ 開場白已複製,貼落 Gemini 就得' : '⚠️ 呢個環境唔准自動複製'); };
+async function copyGem(){
+  const ok = await copyText(GEM_INSTRUCTION);
+  toast(ok ? '✅ Gem 指令已複製!去 Gem 建立頁貼入 Instructions 欄(記得 Default tool 揀 Create image)' : '⚠️ 自動複製被阻,請用「睇下指令內容」全選複製', 4200);
+  return ok;
+}
+$('#copyGem').onclick = copyGem;
+$('#copyGem2').onclick = copyGem;
+$('#viewGemInstr').onclick = () => { $('#instrText').value = GEM_INSTRUCTION;
+  $('#promptModal').classList.remove('show'); $('#instrModal').classList.add('show'); };
+$('#instrCopy').onclick = async () => { const ok = await copyText($('#instrText').value);
+  toast(ok ? '✅ 已複製,貼入 Gem 嘅 Instructions' : '⚠️ 請手動全選複製'); };
+$('#instrSelect').onclick = () => { $('#instrText').focus(); $('#instrText').select(); };
+$('#pmCopy').onclick = async () => { const ok = await copyText($('#pmText').value); toast(ok ? '✅ 已複製' : '⚠️ 請用全選'); };
+$('#pmSelect').onclick = () => { $('#pmText').focus(); $('#pmText').select(); };
+$('#pmOpen').onclick = () => openLink(LINKS.app);
+$('#linkCopy').onclick = async () => { const ok = await copyText($('#linkUrl').value); toast(ok ? '✅ 網址已複製' : '⚠️ 請手動複製'); };
+$('#helpBtn').onclick = () => $('#helpModal').classList.add('show');
+$$('[data-close]').forEach(b => b.onclick = e => e.target.closest('.modal').classList.remove('show'));
+$$('.modal').forEach(m => m.onclick = e => { if(e.target===m) m.classList.remove('show'); });
+
+/* ============ 分享連結:自動修正格式 + 檢查 ============ */
+function normalizeGemLink(raw){
+  let v = (raw||'').trim();
+  if(!v) return { url:'', notes:[] };
+  const notes = [];
+  if(!/^https?:\/\//i.test(v)) v = 'https://' + v;
+  if(/\/u\/\d+\//.test(v)){ v = v.replace(/\/u\/\d+\//, '/'); notes.push('已移除 /u/2/ 之類嘅帳戶索引(呢個只係你自己嘅登入帳戶,唔應該分享出去)'); }
+  try{
+    const u = new URL(v);
+    if(u.hostname === 'share.gemini.google'){ notes.push('已識別為 Google 短連結(share.gemini.google)'); }
+    else if(u.hostname.endsWith('gemini.google.com') && u.pathname.startsWith('/gem/')){
+      if(!u.searchParams.get('usp')){ u.searchParams.set('usp','sharing'); notes.push('已補上 ?usp=sharing(Drive 分享標記)'); }
+      v = u.toString();
+    }
+  }catch(e){}
+  return { url:v, notes };
+}
+function linkCheck(url){
+  const out = [];
+  if(!url) return out;
+  if(/\/u\/\d+\//.test(url)) out.push('⚠️ 仲有 /u/2/ 帳戶索引 —— 朋友開會出錯,請用「儲存連結」自動修正');
+  if(!/usp=sharing|share\.gemini\.google/.test(url)) out.push('ℹ️ 唔似標準分享連結。正確做法:Gem 清單 → 撳「分享」→「複製連結」');
+  return out;
+}
+
+/* 分享連結 */
+const SHARE_KEY = 'photoangle.gemshare';
+function paintShare(){
+  const url = GEM_LINK_PARAM || store.s.getItem(SHARE_KEY) || GEM_LINK_DEFAULT;
+  if(url && /^https?:\/\//.test(url)){ $('#gemPill').textContent='● 已設定分享 Gem'; $('#gemPill').className='pill on'; }
+  else { $('#gemPill').textContent = store.ok ? '未建立 Gem' : '預覽模式(唔會記住設定)'; }
+  const st = $('#shareState');
+  if(st) st.innerHTML = url ? `目前連住嘅 Gem:<a href="${esc(url)}" target="_blank" rel="noopener">${esc(url.slice(0,58))}${url.length>58?'…':''}</a>` : '未設定 Gem 連結。';
+}
+$('#saveShare').onclick = () => {
+  const raw = $('#gemShareUrl').value.trim();
+  if(!raw) return toast('請先貼上你 Gem 嘅連結');
+  const n = normalizeGemLink(raw);
+  $('#gemShareUrl').value = n.url;
+  store.s.setItem(SHARE_KEY, n.url); paintShare();
+  const warn = linkCheck(n.url);
+  $('#shareState').innerHTML =
+    (n.notes.length ? '🔧 ' + n.notes.join('<br>🔧 ') + '<br>' : '') +
+    (warn.length ? warn.join('<br>') + '<br>' : '') +
+    `目前連住嘅 Gem:<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.url.slice(0,60))}${n.url.length>60?'…':''}</a>`;
+  toast('✅ 已儲存' + (n.notes.length ? '(已自動修正連結)' : ''));
+};
+$('#openIncognitoTip').onclick = () => {
+  toast('複製你嘅連結 → 開無痕視窗(Ctrl+Shift+N)→ 貼上 → 開到就代表設定正確 ✅', 6000);
+};
+$('#makeShare').onclick = () => {
+  const rawv = ($('#gemShareUrl').value.trim() || store.s.getItem(SHARE_KEY) || GEM_LINK_DEFAULT || '').trim();
+  const _n = normalizeGemLink(rawv);
+  const v = _n.url;
+  if(!/^https?:\/\//.test(v)) return toast('請先貼上你 Gem 嘅分享連結');
+  if(_n.notes.length) toast('🔧 已自動修正連結:' + _n.notes[0], 4000);
+  // 清理執行時狀態,避免輸出檔帶住彈窗
+  $$('.modal').forEach(m => m.classList.remove('show'));
+  const warn = $('#iframeWarn'); if(warn) warn.style.display = 'none';
+  const bigBox = $('#bigBox'); const boxVal = bigBox ? bigBox.value : '';
+  let html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  html = html.replace(/const GEM_LINK_DEFAULT = \/\*__GEMLINK__\*\/ "[^"]*"/,
+                      'const GEM_LINK_DEFAULT = ' + JSON.stringify(v));
+  html = html.replace(/const GEM_LINK_DEFAULT = "[^"]*"/, 'const GEM_LINK_DEFAULT = ' + JSON.stringify(v));
+  if(bigBox) bigBox.value = boxVal;
+  const blob = new Blob([html], {type:'text/html;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'photo-angle-share.html'; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+  $('#shareState').innerHTML = '✅ 已產生 <b>photo-angle-share.html</b> —— 呢個檔案已記住你嘅 Gem,任何人打開撳「🚀 即時開始」就會直接開你嘅 Gem。'
+    + (IN_IFRAME ? '<br>⚠️ 預覽框可能擋咗下載,請改用「在新視窗開啟」或下載主檔案。' : '');
+  toast('✅ 已下載分享版檔案');
+};
+$('#openShare').onclick = () => {
+  const v = $('#gemShareUrl').value.trim() || store.s.getItem(SHARE_KEY);
+  if(!v) return toast('先貼上你 Gem 嘅分享連結');
+  openLink(v);
+};
+const _openLink = openLink;
+openLink = function(url){ // 有分享 Gem 就優先開 Gem(優先次序:網址參數 > 已儲存 > 檔案內建)
+  const share = GEM_LINK_PARAM || store.s.getItem(SHARE_KEY) || GEM_LINK_DEFAULT;
+  if(url === LINKS.app && share && /^https?:\/\//.test(share)) url = share;
+  _openLink(url);
+};
+$('#quickStart').onclick = quickStart;
+$('#quickStart2').onclick = quickStart;
+
+/* 搜尋 */
+$('#search').oninput = e => { query = e.target.value;
+  $('#searchClear').style.display = query ? 'inline-block' : 'none';
+  $('#tabs').style.opacity = query ? '.5' : '1'; renderGrid(); };
+$('#searchClear').onclick = () => { query=''; $('#search').value=''; $('#searchClear').style.display='none';
+  $('#tabs').style.opacity='1'; renderGrid(); };
+
+/* 初始化 */
+/* ---- 預覽框偵測:下載 / 複製 / 開新窗都會被封鎖,要老實話畀用戶知 ---- */
+const IN_IFRAME = (() => { try { return window.self !== window.top; } catch(e){ return true; } })();
+if (IN_IFRAME) {
+  const w = $('#iframeWarn');
+  w.style.display = 'block';
+  w.innerHTML = '⚠️ <b>你而家喺預覽框入面</b>(沙盒),<b>下載檔案、複製、開新分頁都可能被擋</b>。' +
+    '想真正用到:① 按右上角將檔案<b>在新視窗開啟</b>,或 ② <b>下載</b>呢個 HTML 檔,用 Chrome 打開。' +
+    '預覽框入面你仍然可以睇全部 109 個效果同示範圖。';
+  /* 攔截下載連結:喺 iframe 內改為顯示網址畀用戶複製 */
+  document.addEventListener('click', e => {
+    const a = e.target.closest && e.target.closest('a[download]');
+    if (!a) return;
+    e.preventDefault();
+    const url = new URL(a.getAttribute('href'), location.href).href;
+    if (typeof showLinkModal === 'function') showLinkModal(url);
+    else { $('#linkUrl').value = url; $('#linkModal').classList.add('show'); }
+  }, true);
+}
+
+try{
+  renderTabs(); renderGrid(); paintShare();
+  $('#gemLen').textContent = `指令長度 ${GEM_INSTRUCTION.length} 字(適合 Gem 欄位)`;
+  if(!store.ok) $('#helpModal .kv').insertAdjacentHTML('beforeend',
+    '<div class="notice warnbox" style="margin-top:10px">⚠️ 你而家喺預覽視窗:自動複製同開新視窗可能被限制。想最順,請<b>下載呢個 HTML 檔,用 Chrome 開啟</b>。</div>');
+  window.__READY__ = true;
+}catch(e){
+  const b = $('#bootErr'); b.style.display='block'; b.textContent = '啟動出錯:' + e.message; console.error(e);
+}
+</script>
+</body>
+</html>
